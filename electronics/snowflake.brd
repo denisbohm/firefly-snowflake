@@ -150,9 +150,14 @@
 <wire x1="-10.922" y1="18.923" x2="-21.844" y2="0" width="0" layer="20"/>
 <wire x1="-21.844" y1="0" x2="-10.922" y2="-18.923" width="0" layer="20"/>
 <wire x1="-10.922" y1="-18.923" x2="10.922" y2="-18.923" width="0" layer="20"/>
-<text x="0.3" y="-11.3" size="1" layer="22" rot="MR60">Firefly Design LLC / Denis Bohm
-Snowflake Ornament
-1.0.02016/11/21</text>
+<text x="-5.1" y="-16.7" size="1" layer="22" rot="MR60">Snowflake Ornament
+Copyright 2016
+Firefly Design LLC
+
+Designed in Austin by
+Kyle Bohm &amp; Denis Bohm
+
+1.0.0 2016/11/22</text>
 </plain>
 <libraries>
 <library name="firefly">
