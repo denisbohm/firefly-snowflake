@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		92C642C31DFA51B600773A70 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C21DFA51B600773A70 /* Animation.swift */; };
+		92C642C51DFA52A400773A70 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C41DFA52A400773A70 /* Pixel.swift */; };
+		92C642C71DFA536A00773A70 /* ColorOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */; };
+		92DF1BD51DFA372000F5ED62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF1BD41DFA372000F5ED62 /* AppDelegate.swift */; };
+		92DF1BD71DFA372000F5ED62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF1BD61DFA372000F5ED62 /* ViewController.swift */; };
+		92DF1BD91DFA372000F5ED62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92DF1BD81DFA372000F5ED62 /* Assets.xcassets */; };
+		92DF1BDC1DFA372000F5ED62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92DF1BDA1DFA372000F5ED62 /* Main.storyboard */; };
+		92DF1BE71DFA372000F5ED62 /* Firefly_Snowflake_SimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF1BE61DFA372000F5ED62 /* Firefly_Snowflake_SimulatorTests.swift */; };
+		92DF1BF21DFA372000F5ED62 /* Firefly_Snowflake_SimulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF1BF11DFA372000F5ED62 /* Firefly_Snowflake_SimulatorUITests.swift */; };
+		92DF1C021DFA38C800F5ED62 /* RGBLEDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92DF1C011DFA38C800F5ED62 /* RGBLEDView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92DF1BE31DFA372000F5ED62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92DF1BC91DFA371F00F5ED62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92DF1BD01DFA371F00F5ED62;
+			remoteInfo = "Firefly Snowflake Simulator";
+		};
+		92DF1BEE1DFA372000F5ED62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92DF1BC91DFA371F00F5ED62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92DF1BD01DFA371F00F5ED62;
+			remoteInfo = "Firefly Snowflake Simulator";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		92C642C21DFA51B600773A70 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		92C642C41DFA52A400773A70 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
+		92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorOutAnimation.swift; sourceTree = "<group>"; };
+		92DF1BD11DFA372000F5ED62 /* Firefly Snowflake Simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firefly Snowflake Simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DF1BD41DFA372000F5ED62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		92DF1BD61DFA372000F5ED62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		92DF1BD81DFA372000F5ED62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92DF1BDB1DFA372000F5ED62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92DF1BDD1DFA372000F5ED62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DF1BE21DFA372000F5ED62 /* Firefly Snowflake SimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Firefly Snowflake SimulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DF1BE61DFA372000F5ED62 /* Firefly_Snowflake_SimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firefly_Snowflake_SimulatorTests.swift; sourceTree = "<group>"; };
+		92DF1BE81DFA372000F5ED62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DF1BED1DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Firefly Snowflake SimulatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DF1BF11DFA372000F5ED62 /* Firefly_Snowflake_SimulatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firefly_Snowflake_SimulatorUITests.swift; sourceTree = "<group>"; };
+		92DF1BF31DFA372000F5ED62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92DF1C011DFA38C800F5ED62 /* RGBLEDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBLEDView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92DF1BCE1DFA371F00F5ED62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BDF1DFA372000F5ED62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BEA1DFA372000F5ED62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		92DF1BC81DFA371F00F5ED62 = {
+			isa = PBXGroup;
+			children = (
+				92DF1BD31DFA372000F5ED62 /* Firefly Snowflake Simulator */,
+				92DF1BE51DFA372000F5ED62 /* Firefly Snowflake SimulatorTests */,
+				92DF1BF01DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests */,
+				92DF1BD21DFA372000F5ED62 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		92DF1BD21DFA372000F5ED62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92DF1BD11DFA372000F5ED62 /* Firefly Snowflake Simulator.app */,
+				92DF1BE21DFA372000F5ED62 /* Firefly Snowflake SimulatorTests.xctest */,
+				92DF1BED1DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92DF1BD31DFA372000F5ED62 /* Firefly Snowflake Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				92DF1BD41DFA372000F5ED62 /* AppDelegate.swift */,
+				92DF1BD61DFA372000F5ED62 /* ViewController.swift */,
+				92DF1BD81DFA372000F5ED62 /* Assets.xcassets */,
+				92DF1BDA1DFA372000F5ED62 /* Main.storyboard */,
+				92DF1BDD1DFA372000F5ED62 /* Info.plist */,
+				92DF1C011DFA38C800F5ED62 /* RGBLEDView.swift */,
+				92C642C21DFA51B600773A70 /* Animation.swift */,
+				92C642C41DFA52A400773A70 /* Pixel.swift */,
+				92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */,
+			);
+			path = "Firefly Snowflake Simulator";
+			sourceTree = "<group>";
+		};
+		92DF1BE51DFA372000F5ED62 /* Firefly Snowflake SimulatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				92DF1BE61DFA372000F5ED62 /* Firefly_Snowflake_SimulatorTests.swift */,
+				92DF1BE81DFA372000F5ED62 /* Info.plist */,
+			);
+			path = "Firefly Snowflake SimulatorTests";
+			sourceTree = "<group>";
+		};
+		92DF1BF01DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				92DF1BF11DFA372000F5ED62 /* Firefly_Snowflake_SimulatorUITests.swift */,
+				92DF1BF31DFA372000F5ED62 /* Info.plist */,
+			);
+			path = "Firefly Snowflake SimulatorUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92DF1BD01DFA371F00F5ED62 /* Firefly Snowflake Simulator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92DF1BF61DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake Simulator" */;
+			buildPhases = (
+				92DF1BCD1DFA371F00F5ED62 /* Sources */,
+				92DF1BCE1DFA371F00F5ED62 /* Frameworks */,
+				92DF1BCF1DFA371F00F5ED62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Firefly Snowflake Simulator";
+			productName = "Firefly Snowflake Simulator";
+			productReference = 92DF1BD11DFA372000F5ED62 /* Firefly Snowflake Simulator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92DF1BE11DFA372000F5ED62 /* Firefly Snowflake SimulatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92DF1BF91DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake SimulatorTests" */;
+			buildPhases = (
+				92DF1BDE1DFA372000F5ED62 /* Sources */,
+				92DF1BDF1DFA372000F5ED62 /* Frameworks */,
+				92DF1BE01DFA372000F5ED62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92DF1BE41DFA372000F5ED62 /* PBXTargetDependency */,
+			);
+			name = "Firefly Snowflake SimulatorTests";
+			productName = "Firefly Snowflake SimulatorTests";
+			productReference = 92DF1BE21DFA372000F5ED62 /* Firefly Snowflake SimulatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92DF1BEC1DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92DF1BFC1DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake SimulatorUITests" */;
+			buildPhases = (
+				92DF1BE91DFA372000F5ED62 /* Sources */,
+				92DF1BEA1DFA372000F5ED62 /* Frameworks */,
+				92DF1BEB1DFA372000F5ED62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92DF1BEF1DFA372000F5ED62 /* PBXTargetDependency */,
+			);
+			name = "Firefly Snowflake SimulatorUITests";
+			productName = "Firefly Snowflake SimulatorUITests";
+			productReference = 92DF1BED1DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92DF1BC91DFA371F00F5ED62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Firefly Design LLC";
+				TargetAttributes = {
+					92DF1BD01DFA371F00F5ED62 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TVNL896ZKT;
+						ProvisioningStyle = Automatic;
+					};
+					92DF1BE11DFA372000F5ED62 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TVNL896ZKT;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 92DF1BD01DFA371F00F5ED62;
+					};
+					92DF1BEC1DFA372000F5ED62 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = TVNL896ZKT;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 92DF1BD01DFA371F00F5ED62;
+					};
+				};
+			};
+			buildConfigurationList = 92DF1BCC1DFA371F00F5ED62 /* Build configuration list for PBXProject "Firefly Snowflake Simulator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92DF1BC81DFA371F00F5ED62;
+			productRefGroup = 92DF1BD21DFA372000F5ED62 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92DF1BD01DFA371F00F5ED62 /* Firefly Snowflake Simulator */,
+				92DF1BE11DFA372000F5ED62 /* Firefly Snowflake SimulatorTests */,
+				92DF1BEC1DFA372000F5ED62 /* Firefly Snowflake SimulatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92DF1BCF1DFA371F00F5ED62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DF1BD91DFA372000F5ED62 /* Assets.xcassets in Resources */,
+				92DF1BDC1DFA372000F5ED62 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BE01DFA372000F5ED62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BEB1DFA372000F5ED62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92DF1BCD1DFA371F00F5ED62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DF1C021DFA38C800F5ED62 /* RGBLEDView.swift in Sources */,
+				92DF1BD71DFA372000F5ED62 /* ViewController.swift in Sources */,
+				92C642C31DFA51B600773A70 /* Animation.swift in Sources */,
+				92C642C71DFA536A00773A70 /* ColorOutAnimation.swift in Sources */,
+				92C642C51DFA52A400773A70 /* Pixel.swift in Sources */,
+				92DF1BD51DFA372000F5ED62 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BDE1DFA372000F5ED62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DF1BE71DFA372000F5ED62 /* Firefly_Snowflake_SimulatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92DF1BE91DFA372000F5ED62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DF1BF21DFA372000F5ED62 /* Firefly_Snowflake_SimulatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92DF1BE41DFA372000F5ED62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92DF1BD01DFA371F00F5ED62 /* Firefly Snowflake Simulator */;
+			targetProxy = 92DF1BE31DFA372000F5ED62 /* PBXContainerItemProxy */;
+		};
+		92DF1BEF1DFA372000F5ED62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92DF1BD01DFA371F00F5ED62 /* Firefly Snowflake Simulator */;
+			targetProxy = 92DF1BEE1DFA372000F5ED62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92DF1BDA1DFA372000F5ED62 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92DF1BDB1DFA372000F5ED62 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92DF1BF41DFA372000F5ED62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		92DF1BF51DFA372000F5ED62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		92DF1BF71DFA372000F5ED62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake Simulator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-Simulator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		92DF1BF81DFA372000F5ED62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake Simulator/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-Simulator";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		92DF1BFA1DFA372000F5ED62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake SimulatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-SimulatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Firefly Snowflake Simulator.app/Contents/MacOS/Firefly Snowflake Simulator";
+			};
+			name = Debug;
+		};
+		92DF1BFB1DFA372000F5ED62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake SimulatorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-SimulatorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Firefly Snowflake Simulator.app/Contents/MacOS/Firefly Snowflake Simulator";
+			};
+			name = Release;
+		};
+		92DF1BFD1DFA372000F5ED62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake SimulatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-SimulatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Firefly Snowflake Simulator";
+			};
+			name = Debug;
+		};
+		92DF1BFE1DFA372000F5ED62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TVNL896ZKT;
+				INFOPLIST_FILE = "Firefly Snowflake SimulatorUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fireflydesign.Firefly-Snowflake-SimulatorUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Firefly Snowflake Simulator";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92DF1BCC1DFA371F00F5ED62 /* Build configuration list for PBXProject "Firefly Snowflake Simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DF1BF41DFA372000F5ED62 /* Debug */,
+				92DF1BF51DFA372000F5ED62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92DF1BF61DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake Simulator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DF1BF71DFA372000F5ED62 /* Debug */,
+				92DF1BF81DFA372000F5ED62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92DF1BF91DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake SimulatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DF1BFA1DFA372000F5ED62 /* Debug */,
+				92DF1BFB1DFA372000F5ED62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92DF1BFC1DFA372000F5ED62 /* Build configuration list for PBXNativeTarget "Firefly Snowflake SimulatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92DF1BFD1DFA372000F5ED62 /* Debug */,
+				92DF1BFE1DFA372000F5ED62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92DF1BC91DFA371F00F5ED62 /* Project object */;
+}

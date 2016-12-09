@@ -25,7 +25,7 @@
     c_preprocessor_definitions=""
     gcc_dwarf_version="dwarf-2"
     gcc_optimization_level="Level 3" />
-  <project Name="snowflake_base_debug_nRF51">
+  <project Name="snowflake_debug_without_softdevice">
     <configuration
       Name="Common"
       Placement="Flash"
@@ -157,4 +157,116 @@
   <configuration
     Name="THUMB Release"
     inherited_configurations="THUMB;Release" />
+  <project Name="snowflake_debug">
+    <configuration
+      Name="Common"
+      Placement="Flash"
+      Target="nRF51822_xxAA"
+      arm_architecture="v6M"
+      arm_core_type="Cortex-M0"
+      arm_fpu_type="None"
+      arm_gcc_target="arm-unknown-eabi"
+      arm_linker_heap_size="0"
+      arm_linker_stack_size="4096"
+      arm_simulator_memory_simulation_filename="$(TargetsDir)/nRF51/nRF51SimulatorMemory$(HostDLL)"
+      arm_simulator_memory_simulation_parameter="nRF51822;0x40000;0x4000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_interface_type="Default"
+      arm_target_loader_applicable_loaders="Flash"
+      arm_target_loader_default_loader="Flash"
+      c_additional_options="-fms-extensions;-Wall;-Wextra;-Wstrict-prototypes;-Wno-unused-function"
+      c_preprocessor_definitions="BLE_STACK_SUPPORT_REQD;SOFTDEVICE_PRESENT;USE_WITH_SOFTDEVICE=1;NRF51"
+      c_user_include_directories="$(TargetsDir)/CMSIS_3/CMSIS/Include;$(SolutionDir)/src;$(SolutionDir)/firefly-ice-firmware/src;$(SolutionDir)/nRF5/src;$(ProjectDir)/src;$(SolutionDir)/nRF5_SDK_12/components/device;$(SolutionDir)/nRF5_SDK_12/components/toolchain;$(SolutionDir)/nRF5_SDK_12/components/softdevice/s130/headers;$(SolutionDir)/nRF5_SDK_12/components/softdevice/s130/headers/nRF51;$(SolutionDir)/nRF5_SDK_12/components/libraries/util;$(SolutionDir)/nRF5_SDK_12/components/ble/ble_services/ble_bas;$(SolutionDir)/nRF5_SDK_12/components/ble/ble_services/ble_dis;$(SolutionDir)/nRF5_SDK_12/components/ble/ble_services;$(SolutionDir)/nRF5_SDK_12/components/ble/common;$(SolutionDir)/nRF5_SDK_12/components/ble/ble_dtm;$(SolutionDir)/nRF5_SDK_12/components/libraries/timer;$(SolutionDir)/nRF5_SDK_12/components/libraries/gpiote;$(SolutionDir)/nRF5_SDK_12/components/libraries/scheduler;$(SolutionDir)/nRF5_SDK_12/components/libraries/log;$(SolutionDir)/nRF5_SDK_12/components/libraries/log/src;$(SolutionDir)/nRF5_SDK_12/components/softdevice/common/softdevice_handler;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/common;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/config;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/delay;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/gpiote;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/hal;$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/spi_master"
+      debug_additional_load_file="$(SolutionDir)/nRF5_SDK_12/components/softdevice/s130/hex/s130_nrf51_2.0.1_softdevice.hex"
+      debug_entry_point_symbol="notmain"
+      debug_register_definition_file="$(TargetsDir)/nRF51/nRF51_Peripherals.xml"
+      linker_memory_map_file="$(TargetsDir)/nRF51/nRF51822_xxAA_MemoryMap.xml"
+      linker_output_format="hex"
+      linker_section_placement_file="$(StudioDir)/targets/Cortex_M/flash_placement.xml"
+      linker_section_placement_macros="FLASH_START=0x1b000;RAM_START=0x200013c8"
+      project_directory="nRF51"
+      project_type="Executable"
+      property_groups_file_path="$(TargetsDir)/nRF51/propertyGroups.xml"
+      target_loader_erase_all="Yes"
+      target_reset_script="Reset()"
+      target_script_file="$(TargetsDir)/nRF51/nRF51_Target.js" />
+    <configuration
+      Name="Flash"
+      arm_target_flash_loader_file_path="$(TargetsDir)/nRF51/Release/Loader.elf"
+      arm_target_loader_can_erase_all="Yes"
+      arm_target_loader_can_lock_all="No"
+      arm_target_loader_can_lock_range="No"
+      arm_target_loader_can_unlock_all="No"
+      arm_target_loader_can_unlock_range="No"
+      target_reset_script="FLASHReset()" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <folder Name="platform">
+        <file file_name="../nRF5/src/sdk_config.h" />
+        <file file_name="../nRF5/src/fd_hal_ble.c" />
+        <file file_name="../nRF5/src/fd_hal_app.c" />
+        <file file_name="../nRF5/src/fd_nrf.h" />
+        <file file_name="../nRF5/src/fd_hal_delay.c" />
+        <file file_name="../nRF5/src/fd_hal_gpio.c" />
+        <file file_name="../nRF5/src/fd_hal_interrupt.c" />
+      </folder>
+      <folder Name="nRF5_SDK">
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/ble/ble_services/ble_dis/ble_dis.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/ble/common/ble_srv_common.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/ble/common/ble_advdata.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/ble/ble_dtm/ble_dtm.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/libraries/util/app_util_platform.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/libraries/gpiote/app_gpiote.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/libraries/scheduler/app_scheduler.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/softdevice/common/softdevice_handler/softdevice_handler.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/common/nrf_drv_common.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/gpiote/nrf_drv_gpiote.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/drivers_nrf/hal/nrf_nvmc.c" />
+        <file file_name="$(SolutionDir)/nRF5_SDK_12/components/ble/ble_services/ble_bas/ble_bas.c" />
+        <configuration Name="Common" build_suppress_warnings="Yes" />
+        <file file_name="../nRF5_SDK_12/components/libraries/log/src/nrf_log_frontend.c" />
+        <file file_name="../nRF5_SDK_12/components/drivers_nrf/timer/nrf_drv_timer.c" />
+        <file file_name="../nRF5_SDK_12/components/libraries/timer/app_timer.c" />
+        <file file_name="../nRF5_SDK_12/components/libraries/timer/app_timer_appsh.c" />
+        <file file_name="../nRF5_SDK_12/components/libraries/util/app_error.c" />
+        <file file_name="../nRF5_SDK_12/components/toolchain/system_nrf51.c" />
+      </folder>
+      <folder Name="snowflake">
+        <file file_name="../src/main.c" />
+        <file file_name="../src/fd_WS2812B.c">
+          <configuration
+            Name="Common"
+            asm_additional_options=""
+            c_only_additional_options="" />
+        </file>
+        <file file_name="../src/fd_WS2812B.h" />
+        <file file_name="../src/fd_snowflake.h" />
+      </folder>
+      <folder Name="base">
+        <file file_name="../src/fd_api.c" />
+        <file file_name="../src/fd_api.h" />
+        <file file_name="../src/fd_hal_interrupt.h" />
+        <file file_name="../src/fd_hal_usb.h" />
+        <file file_name="../firefly-ice-firmware/src/fd_binary.c" />
+        <file file_name="../firefly-ice-firmware/src/fd_binary.h" />
+        <file file_name="../firefly-ice-firmware/src/fd_log.h" />
+        <file file_name="../firefly-ice-firmware/src/fd_log_null.c" />
+      </folder>
+      <folder Name="hal">
+        <file file_name="../src/fd_hal_ble.h" />
+        <file file_name="../src/fd_hal_app.h" />
+        <file file_name="../src/fd_hal_delay.h" />
+        <file file_name="../src/fd_hal_gpio.h" />
+      </folder>
+    </folder>
+    <folder Name="System Files">
+      <file file_name="$(StudioDir)/source/thumb_crt0.s" />
+      <file file_name="$(TargetsDir)/nRF51/nRF51_Startup.s" />
+    </folder>
+    <configuration Name="Debug" c_preprocessor_definitions="DEBUG" />
+    <configuration
+      Name="Release"
+      c_preprocessor_definitions="NDEBUG"
+      gcc_optimization_level="Level 1" />
+  </project>
 </solution>

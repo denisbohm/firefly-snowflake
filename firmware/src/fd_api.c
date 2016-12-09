@@ -32,18 +32,18 @@ typedef struct {
     fd_api_function_t function;
 } fd_api_entry_t;
 
-#define fd_api_entry_size 256
+#define fd_api_entry_size 16
 fd_api_entry_t fd_api_entrys[fd_api_entry_size];
 uint32_t fd_api_entry_count;
 
 uint32_t fd_api_tx_index;
 uint32_t fd_api_tx_length;
-#define fd_api_tx_size 1024
+#define fd_api_tx_size 350
 uint8_t fd_api_tx_buffer[fd_api_tx_size];
 
 uint32_t fd_api_rx_index;
 uint32_t fd_api_rx_length;
-#define fd_api_rx_size 1024
+#define fd_api_rx_size 350
 uint8_t fd_api_rx_buffer[fd_api_rx_size];
 
 fd_api_can_transmit_handler_t fd_api_can_transmit_handler;

@@ -53,11 +53,11 @@ int main(void) {
     fd_hal_delay_ms(10);
     fd_WS2812B_initialize(FD_SNOWFLAKE_PIN_LED_DIN);
     uint32_t grbs[] = {
-                                0xff000000,
-                    0x00ff0000, 0x0000ff00, 0xff000000,
-        0x00ff0000, 0x0000ff00, 0xff000000, 0x00ff0000, 0x0000ff00,
-                    0x00ff0000, 0x0000ff00, 0xff000000,
-                                0xff000000,
+                                0x11000000,
+                    0x00110000, 0x00001100, 0x11000000, // reverse
+        0x00110000, 0x00001100, 0x11000000, 0x00110000, 0x00001100,
+                    0x00110000, 0x00001100, 0x11000000, // reverse
+                                0x11000000,
     };
     fd_WS2812B_data(grbs, sizeof(grbs) / sizeof(uint32_t));
 

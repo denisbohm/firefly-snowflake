@@ -356,16 +356,16 @@ static void fd_nrf5_ble_ble_stack_initialize(void) {
 #endif
 
     nrf_clock_lf_cfg_t clock_lf_cfg = {
-#ifdef fd_nrf5_ble_LOW_FREQUENCY_CLOCK_RC
-        .source        = NRF_CLOCK_LF_SRC_RC,
-        .rc_ctiv       = 16,
-        .rc_temp_ctiv  = 2,
-        .xtal_accuracy = NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM
-#else
+#ifdef FD_HAL_BLE_LOW_FREQUENCY_XTAL
         .source = NRF_CLOCK_LF_SRC_XTAL,
         .xtal_accuracy = NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM,
         .rc_ctiv = 0,
         .rc_temp_ctiv = 0,
+#else
+        .source        = NRF_CLOCK_LF_SRC_RC,
+        .rc_ctiv       = 16,
+        .rc_temp_ctiv  = 2,
+        .xtal_accuracy = NRF_CLOCK_LF_XTAL_ACCURACY_20_PPM
 #endif
     };
     SOFTDEVICE_HANDLER_INIT(&clock_lf_cfg, NULL);
