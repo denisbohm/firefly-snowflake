@@ -32,18 +32,18 @@ typedef struct {
     fd_api_function_t function;
 } fd_api_entry_t;
 
-#define fd_api_entry_size 16
+#define fd_api_entry_size 2
 fd_api_entry_t fd_api_entrys[fd_api_entry_size];
 uint32_t fd_api_entry_count;
 
 uint32_t fd_api_tx_index;
 uint32_t fd_api_tx_length;
-#define fd_api_tx_size 350
+#define fd_api_tx_size 50
 uint8_t fd_api_tx_buffer[fd_api_tx_size];
 
 uint32_t fd_api_rx_index;
 uint32_t fd_api_rx_length;
-#define fd_api_rx_size 350
+#define fd_api_rx_size 50
 uint8_t fd_api_rx_buffer[fd_api_rx_size];
 
 fd_api_can_transmit_handler_t fd_api_can_transmit_handler;
@@ -114,6 +114,7 @@ bool fd_api_process_tx(void) {
     return false;
 }
 
+#ifdef FD_API_EVENT_HISTORY
 typedef struct {
     uint64_t identifier;
     uint64_t type;
@@ -121,12 +122,15 @@ typedef struct {
 
 fd_api_event_t fd_api_event_history[256];
 uint32_t fd_api_event_history_index = 0;
+#endif
 
 void fd_api_dispatch(uint64_t identifier, uint64_t type, fd_binary_t *binary) {
+#ifdef FD_API_EVENT_HISTORY
     fd_api_event_t *event = &fd_api_event_history[fd_api_event_history_index++ & 0xff];
     event->identifier = identifier;
     event->type = type;
-    
+#endif
+
     fd_api_function_t function = fd_api_lookup(identifier, type);
     if (function) {
         function(identifier, type, binary);

@@ -205,7 +205,7 @@ static void fd_nrf5_ble_service_init(fd_nrf5_ble_service_t *service, aw_service_
     service->conn_handle = BLE_CONN_HANDLE_INVALID;
 
     ble_uuid128_t base_uuid;
-    memcpy(&base_uuid, &fd_nrf5_ble_configuration.service_base, 16);
+    memcpy(&base_uuid, fd_nrf5_ble_configuration.service_base, 16);
     uint32_t err_code = sd_ble_uuid_vs_add(&base_uuid, &service->uuid_type);
     APP_ERROR_CHECK(err_code);
 
@@ -255,7 +255,7 @@ static void fd_nrf5_ble_advertising_initialize(void) {
     advdata.include_appearance = false;
     advdata.flags = BLE_GAP_ADV_FLAGS_LE_ONLY_GENERAL_DISC_MODE;
     ble_uuid_t adv_uuids[] = {{fd_nrf5_ble_configuration.service_uuid, fd_nrf5_ble_service.uuid_type}};
-#ifndef fd_nrf5_ble_SUPPORT_SCAN_RESPONSE
+#ifndef FD_HAL_BLE_SUPPORT_SCAN_RESPONSE
     advdata.uuids_complete.uuid_cnt = sizeof(adv_uuids) / sizeof(adv_uuids[0]);
     advdata.uuids_complete.p_uuids = adv_uuids;
     uint32_t err_code = ble_advdata_set(&advdata, 0);
@@ -375,7 +375,8 @@ static void fd_nrf5_ble_ble_stack_initialize(void) {
 
     ble_enable_params_t ble_enable_params;
     memset(&ble_enable_params, 0, sizeof(ble_enable_params_t));
-    uint32_t app_ram_base = 0x20002800; // !!! check this by passing in 0 and getting min out -denis
+    softdevice_enable_get_default_config(0, 1, &ble_enable_params);
+    uint32_t app_ram_base = 0x20001fe8; // !!! check this by passing in 0 and getting min out -denis
     err_code = sd_ble_enable(&ble_enable_params, &app_ram_base);
     APP_ERROR_CHECK(err_code);
     ble_gap_addr_t addr;
@@ -400,8 +401,8 @@ void fd_hal_ble_initialize(fd_hal_ble_configuration_t *configuration) {
 #if USE_WITH_SOFTDEVICE == 1
     fd_nrf5_ble_ble_stack_initialize();
     fd_nrf5_ble_gap_params_initialize();
-    fd_nrf5_ble_advertising_initialize();
     fd_nrf5_ble_services_initialize();
+    fd_nrf5_ble_advertising_initialize();
 #else
     NRF_CLOCK->LFCLKSRC = (CLOCK_LFCLKSRC_SRC_RC << CLOCK_LFCLKSRC_SRC_Pos);
     NRF_CLOCK->TASKS_LFCLKSTART = 1;
@@ -453,4 +454,145 @@ uint32_t fd_hal_ble_set_characteristic_value(uint16_t service_uuid, uint16_t uui
     hvx_params.p_len  = &length;
     hvx_params.type   = BLE_GATT_HVX_NOTIFICATION;
     return sd_ble_gatts_hvx(service->conn_handle, &hvx_params);
+}
+
+static nrf_radio_request_t  m_timeslot_request;
+static uint32_t             m_slot_length;
+
+static nrf_radio_signal_callback_return_param_t signal_callback_return_param;
+
+/**@brief Request next timeslot event in earliest configuration
+ */
+uint32_t request_next_event_earliest(void)
+{
+    m_slot_length                                  = 15000;
+    m_timeslot_request.request_type                = NRF_RADIO_REQ_TYPE_EARLIEST;
+    m_timeslot_request.params.earliest.hfclk       = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
+    m_timeslot_request.params.earliest.priority    = NRF_RADIO_PRIORITY_NORMAL;
+    m_timeslot_request.params.earliest.length_us   = m_slot_length;
+    m_timeslot_request.params.earliest.timeout_us  = 1000000;
+    return sd_radio_request(&m_timeslot_request);
+}
+
+
+/**@brief Configure next timeslot event in earliest configuration
+ */
+void configure_next_event_earliest(void)
+{
+    m_slot_length                                  = 15000;
+    m_timeslot_request.request_type                = NRF_RADIO_REQ_TYPE_EARLIEST;
+    m_timeslot_request.params.earliest.hfclk       = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
+    m_timeslot_request.params.earliest.priority    = NRF_RADIO_PRIORITY_NORMAL;
+    m_timeslot_request.params.earliest.length_us   = m_slot_length;
+    m_timeslot_request.params.earliest.timeout_us  = 1000000;
+}
+
+
+/**@brief Configure next timeslot event in normal configuration
+ */
+void configure_next_event_normal(void)
+{
+    m_slot_length                                 = 15000;
+    m_timeslot_request.request_type               = NRF_RADIO_REQ_TYPE_NORMAL;
+    m_timeslot_request.params.normal.hfclk        = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
+    m_timeslot_request.params.normal.priority     = NRF_RADIO_PRIORITY_HIGH;
+    m_timeslot_request.params.normal.distance_us  = 100000;
+    m_timeslot_request.params.normal.length_us    = m_slot_length;
+}
+
+
+/**@brief Timeslot signal handler
+ */
+void nrf_evt_signal_handler(uint32_t evt_id)
+{
+    uint32_t err_code;
+
+    switch (evt_id)
+    {
+        case NRF_EVT_RADIO_SIGNAL_CALLBACK_INVALID_RETURN:
+            //No implementation needed
+            break;
+        case NRF_EVT_RADIO_SESSION_IDLE:
+            //No implementation needed
+            break;
+        case NRF_EVT_RADIO_SESSION_CLOSED:
+            //No implementation needed, session ended
+            break;
+        case NRF_EVT_RADIO_BLOCKED:
+            //Fall through
+        case NRF_EVT_RADIO_CANCELED:
+            err_code = request_next_event_earliest();
+            APP_ERROR_CHECK(err_code);
+            break;
+        default:
+            break;
+    }
+}
+
+
+/**@brief Timeslot event handler
+ */
+nrf_radio_signal_callback_return_param_t * radio_callback(uint8_t signal_type)
+{
+    switch(signal_type)
+    {
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_START:
+            //Start of the timeslot - set up timer interrupt
+            signal_callback_return_param.params.request.p_next = NULL;
+            signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_NONE;
+
+            NRF_TIMER0->INTENSET = TIMER_INTENSET_COMPARE0_Msk;
+            NRF_TIMER0->CC[0] = m_slot_length - 1000;
+            NVIC_EnableIRQ(TIMER0_IRQn);   
+
+            nrf_gpio_pin_toggle(20); //Toggle LED4
+            break;
+
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_RADIO:
+            signal_callback_return_param.params.request.p_next = NULL;
+            signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_NONE;
+            break;
+
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_TIMER0:
+            //Timer interrupt - do graceful shutdown - schedule next timeslot
+            configure_next_event_normal();
+            signal_callback_return_param.params.request.p_next = &m_timeslot_request;
+            signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_REQUEST_AND_END;
+            break;
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_EXTEND_SUCCEEDED:
+            //No implementation needed
+            break;
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_EXTEND_FAILED:
+            //Try scheduling a new timeslot
+            configure_next_event_earliest();
+            signal_callback_return_param.params.request.p_next = &m_timeslot_request;
+            signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_REQUEST_AND_END;
+            break;
+        default:
+            //No implementation needed
+            break;
+    }
+    return (&signal_callback_return_param);
+}
+
+
+/**@brief Function for initializing the timeslot API.
+ */
+uint32_t timeslot_sd_init(void)
+{
+    uint32_t err_code;
+
+    err_code = sd_radio_session_open(radio_callback);
+    if (err_code != NRF_SUCCESS)
+    {
+        return err_code;
+    }
+
+    err_code = request_next_event_earliest();
+    if (err_code != NRF_SUCCESS)
+    {
+        (void)sd_radio_session_close();
+        return err_code;
+    }
+    return NRF_SUCCESS;
 }

@@ -40,7 +40,7 @@ int main(void) {
         .manufacturer = "Firefly Design LLC",
         .model = "Snowflake",
         .serial_number = "0000",
-        .device_name = "FireSnow",
+        .device_name = "flake-01",
         .service_base = service_base,
         .service_uuid = 0xB8B4,
     };
