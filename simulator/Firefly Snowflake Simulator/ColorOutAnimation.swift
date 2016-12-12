@@ -34,6 +34,8 @@ class ColorOutAnimation: Animation {
     var colorIndex = 0
     var colors: [(Double, Double, Double)] = []
 
+    var grbzs: [UInt32] = []
+
     init() {
         var maxDistance: Double = 0
         for pixel in pixels {
@@ -57,9 +59,18 @@ class ColorOutAnimation: Animation {
     func initialize() {
         index = 0
         colorIndex = 0
+        grbzs = []
     }
 
     func step() {
+        for pixel in pixels {
+            let r = UInt32(round(pixel.red * 255.0))
+            let g = UInt32(round(pixel.green * 255.0))
+            let b = UInt32(round(pixel.blue * 255.0))
+            let grbz = (g << 24) | (r << 16) | (b << 8)
+            grbzs.append(grbz)
+        }
+
         index += increment
         if index >= (steps - 1) {
             increment = -1
@@ -69,6 +80,18 @@ class ColorOutAnimation: Animation {
         }
         if index == 0 {
             colorIndex = (colorIndex + 1) % colors.count
+            if colorIndex == 0 {
+                var i = 0
+                for grbz in grbzs {
+                    print(NSString(format: " 0x%08x,", grbz), terminator: "")
+                    i += 1
+                    if i >= 13 {
+                        print()
+                        i = 0
+                    }
+                }
+                grbzs = []
+            }
         }
 
         let (r, g, b) = colors[colorIndex]

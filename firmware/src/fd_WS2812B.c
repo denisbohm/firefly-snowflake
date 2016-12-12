@@ -55,14 +55,17 @@ __ASM volatile (
 );
 }
 
-void fd_WS2812B_data(uint32_t *grbzs, uint32_t count) {
+void fd_WS2812B_data(const uint32_t *grbzs, uint32_t count) {
     uint32_t pin_bit = 1 << fd_WS2812B_pin;
-    uint32_t *end = grbzs + count;
+    const uint32_t *end = grbzs + count;
     while (grbzs < end) {
         uint32_t grbz = *grbzs++;
         __disable_irq();
         fd_WS2812B_grbz(grbz, &NRF_GPIO->OUTSET, &NRF_GPIO->OUTCLR, pin_bit);
         __enable_irq();
     }
+}
+
+void fd_WS2812B_reset(void) {
     nrf_delay_us(50); // RET code
 }

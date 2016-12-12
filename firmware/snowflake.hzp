@@ -108,6 +108,8 @@
         </file>
         <file file_name="../src/fd_WS2812B.h" />
         <file file_name="../src/fd_snowflake.h" />
+        <file file_name="../src/fd_breathe_animation.c" />
+        <file file_name="../src/fd_breathe_animation.h" />
       </folder>
       <folder Name="base">
         <file file_name="../src/fd_api.c" />
@@ -241,6 +243,8 @@
         </file>
         <file file_name="../src/fd_WS2812B.h" />
         <file file_name="../src/fd_snowflake.h" />
+        <file file_name="../src/fd_breathe_animation.c" />
+        <file file_name="../src/fd_breathe_animation.h" />
       </folder>
       <folder Name="base">
         <file file_name="../src/fd_api.c" />

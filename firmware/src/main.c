@@ -3,12 +3,18 @@
 #include "fd_hal_ble.h"
 #include "fd_hal_delay.h"
 #include "fd_hal_gpio.h"
+#include "fd_log.h"
 
 #include "fd_snowflake.h"
+#include "fd_breathe_animation.h"
 #include "fd_WS2812B.h"
 
 #include <stdbool.h>
 #include <stdint.h>
+
+uint32_t fd_snowflake_pause;
+uint32_t fd_snowflake_animation_step;
+const uint32_t *fd_snowflake_animation_grbzs;
 
 void fd_hal_ble_characteristic_value_change(uint16_t uuid, uint8_t *data, uint16_t length) {
 }
@@ -21,6 +27,49 @@ void fd_hal_ble_gap_evt_disconnected(void) {
 
 void fd_hal_ble_gap_evt_tx_complete(uint8_t count) {
 }
+
+void main_timeslot(void) {
+    if (fd_snowflake_pause > 0) {
+        static const uint32_t all_off[] = {
+                                    0x00000000,
+                        0x00000000, 0x00000000, 0x00000000,
+            0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000,
+                        0x00000000, 0x00000000, 0x00000000,
+                                    0x00000000,
+        };
+        fd_WS2812B_data(all_off, 13);
+        --fd_snowflake_pause;
+        return;
+    }
+
+    // display animation pattern for this step
+    fd_WS2812B_data(fd_snowflake_animation_grbzs, 13);
+
+    // get ready for next step
+    if (++fd_snowflake_animation_step >= fd_breathe_steps) {
+        fd_snowflake_animation_step = 0;
+        fd_snowflake_animation_grbzs = fd_breathe_grbzs;
+    } else {
+        fd_snowflake_animation_grbzs += 13;
+    }
+
+    if ((fd_snowflake_animation_step % 78) == 0) {
+        fd_snowflake_pause = 80;
+    }
+}
+
+#if 0
+void main_test_pattern(void) {
+    static const uint32_t grbs[] = {
+                                0x11000000,
+                    0x00110000, 0x00001100, 0x11000000,
+        0x00110000, 0x00001100, 0x11000000, 0x00110000, 0x00001100,
+                    0x00110000, 0x00001100, 0x11000000,
+                                0x11000000,
+    };
+    fd_WS2812B_data(fd_snowflake_animation_grbzs, 13);
+}
+#endif
 
 int main(void) {
     fd_hal_gpio_initialize();
@@ -52,16 +101,16 @@ int main(void) {
     fd_hal_gpio_on(FD_SNOWFLAKE_PIN_LED_POWER);
     fd_hal_delay_ms(10);
     fd_WS2812B_initialize(FD_SNOWFLAKE_PIN_LED_DIN);
-    uint32_t grbs[] = {
-                                0x11000000,
-                    0x00110000, 0x00001100, 0x11000000, // reverse
-        0x00110000, 0x00001100, 0x11000000, 0x00110000, 0x00001100,
-                    0x00110000, 0x00001100, 0x11000000, // reverse
-                                0x11000000,
-    };
-    fd_WS2812B_data(grbs, sizeof(grbs) / sizeof(uint32_t));
+    fd_snowflake_pause = 0;
+    fd_snowflake_animation_step = 0;
+    fd_snowflake_animation_grbzs = fd_breathe_grbzs;
 
 #if USE_WITH_SOFTDEVICE == 1
+    // 50 us to send BRG values to all LEDs
+    // 50 us to reset the LED communication slot
+    // 50 ms (20 Hz) between LED updates
+    bool result = fd_hal_ble_timeslot_initialize(50000, 100, main_timeslot);
+    fd_log_assert(result);
     fd_hal_ble_start_advertising();
     while (true) {
         fd_api_process();
@@ -69,6 +118,8 @@ int main(void) {
     }
 #else
     while (true) {
+        main_timeslot();
+        fd_hal_delay_ms(50);
     }
 #endif
 }
