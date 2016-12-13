@@ -15,6 +15,7 @@
 uint32_t fd_snowflake_pause;
 uint32_t fd_snowflake_animation_step;
 const uint32_t *fd_snowflake_animation_grbzs;
+bool fd_snowflake_step;
 
 void fd_hal_ble_characteristic_value_change(uint16_t uuid, uint8_t *data, uint16_t length) {
 }
@@ -28,7 +29,7 @@ void fd_hal_ble_gap_evt_disconnected(void) {
 void fd_hal_ble_gap_evt_tx_complete(uint8_t count) {
 }
 
-void main_timeslot(void) {
+void fd_snowflake_next_animation_step(void) {
     if (fd_snowflake_pause > 0) {
         static const uint32_t all_off[] = {
                                     0x00000000,
@@ -71,6 +72,10 @@ void main_test_pattern(void) {
 }
 #endif
 
+void fd_snowflake_timeslot(void) {
+    fd_snowflake_step = true;
+}
+
 int main(void) {
     fd_hal_gpio_initialize();
 
@@ -104,21 +109,26 @@ int main(void) {
     fd_snowflake_pause = 0;
     fd_snowflake_animation_step = 0;
     fd_snowflake_animation_grbzs = fd_breathe_grbzs;
+    fd_snowflake_step = false;
 
 #if USE_WITH_SOFTDEVICE == 1
     // 50 us to send BRG values to all LEDs
     // 50 us to reset the LED communication slot
     // 50 ms (20 Hz) between LED updates
-    bool result = fd_hal_ble_timeslot_initialize(50000, 100, main_timeslot);
+    bool result = fd_hal_ble_timeslot_initialize(50000, 100, fd_snowflake_timeslot);
     fd_log_assert(result);
     fd_hal_ble_start_advertising();
     while (true) {
+        if (fd_snowflake_step) {
+            fd_snowflake_next_animation_step();
+            fd_snowflake_step = false;
+        }
         fd_api_process();
         fd_hal_app_dispatch_and_wait();
     }
 #else
     while (true) {
-        main_timeslot();
+        fd_snowflake_next_animation_step();
         fd_hal_delay_ms(50);
     }
 #endif

@@ -5901,6 +5901,7 @@ type V526-0, grid 2.5 mm</description>
 <part name="B+" library="firefly" deviceset="TARGET-PIN" device="WP-28AWG"/>
 <part name="B-" library="firefly" deviceset="TARGET-PIN" device="WP-28AWG"/>
 <part name="V42" library="firefly" deviceset="GND" device=""/>
+<part name="VBUS" library="firefly" deviceset="TARGET-PIN" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -6146,6 +6147,7 @@ type V526-0, grid 2.5 mm</description>
 <instance part="B+" gate="G$1" x="96.52" y="96.52" rot="R90"/>
 <instance part="B-" gate="G$1" x="68.58" y="96.52" rot="R90"/>
 <instance part="V42" gate="GND" x="68.58" y="83.82"/>
+<instance part="VBUS" gate="G$1" x="25.4" y="83.82" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -6664,7 +6666,8 @@ type V526-0, grid 2.5 mm</description>
 <pinref part="J1" gate="G$1" pin="5V"/>
 <wire x1="50.8" y1="73.66" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="1"/>
-<wire x1="40.64" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="73.66" x2="25.4" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="73.66" x2="22.86" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="40.64" y1="71.12" x2="40.64" y2="73.66" width="0.1524" layer="91"/>
 <junction x="40.64" y="73.66"/>
 <wire x1="106.68" y1="109.22" x2="40.64" y2="109.22" width="0.1524" layer="91"/>
@@ -6674,6 +6677,9 @@ type V526-0, grid 2.5 mm</description>
 <wire x1="33.02" y1="109.22" x2="40.64" y2="109.22" width="0.1524" layer="91"/>
 <junction x="40.64" y="109.22"/>
 <junction x="106.68" y="109.22"/>
+<pinref part="VBUS" gate="G$1" pin="1"/>
+<wire x1="25.4" y1="76.2" x2="25.4" y2="73.66" width="0.1524" layer="91"/>
+<junction x="25.4" y="73.66"/>
 </segment>
 </net>
 <net name="SWDIO" class="0">

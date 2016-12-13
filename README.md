@@ -5,6 +5,14 @@ The snowflake is a Christmas tree ornament with RGB LEDs that light up in variou
 
 This repository has all the files to create a snowflake Christmas ornament.  This includes 3D mechanical files to create the plastic parts, Eagle schematics & layout for the PCBA, PCBA firmware, and Swift App source files.
 
+To compile the firmware you need the Nordic nRF5 SDK 12 and Firefly Ice Firmware.  On macOS:
+
+    $ git clone https://github.com/denisbohm/firefly-snowflake.git
+    $ cd firefly-snowflake/firmware
+    $ git clone https://github.com/denisbohm/firefly-ice-firmware.git
+    $ curl https://www.nordicsemi.com/eng/nordic/download_resource/54291/51/54256290 -o nRF5_SDK_12.zip
+    $ unzip nRF5_SDK_12.zip -d nRF5_SDK_12
+
 See [Firefly Design LLC](http://fireflydesign.com) for information on the open source Firefly Design repositories.
 
 ## Copyright and License

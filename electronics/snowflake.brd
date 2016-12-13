@@ -409,6 +409,12 @@ chip</description>
 <pad name="1" x="0" y="0" drill="0.6" shape="long" rot="R90"/>
 <text x="-0.8" y="1.3" size="1" layer="25">&gt;Name</text>
 </package>
+<package name="TARGET-PIN-1MM">
+<circle x="0" y="0" radius="0.4" width="0.127" layer="51"/>
+<smd name="1" x="0" y="0" dx="0.84" dy="0.84" layer="1" roundness="100" thermals="no" cream="no"/>
+<text x="-0.2" y="0.7" size="0.5" layer="25">&gt;Name</text>
+<text x="-0.4" y="-0.8" size="0.254" layer="51">&gt;Name</text>
+</package>
 </packages>
 </library>
 </libraries>
@@ -831,6 +837,7 @@ Please make sure your boards conform to these design rules.</description>
 <element name="B-" library="firefly" package="WP-28AWG" value="TARGET-PINWP-28AWG" x="10.476" y="-15.294" smashed="yes" rot="MR120">
 <attribute name="NAME" x="11.501834375" y="-15.43681875" size="0.8128" layer="26" rot="MR120"/>
 </element>
+<element name="VBUS" library="firefly" package="TARGET-PIN-1MM" value="TARGET-PIN" x="-20.6" y="-25.1"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1250,6 +1257,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="11.8" y1="-9.5" x2="10.5" y2="-11.9" width="0.5" layer="16"/>
 <wire x1="10.5" y1="-11.9" x2="6.1" y2="-11.9" width="0.5" layer="16"/>
 <via x="11.8" y="-9.5" extent="1-16" drill="0.3302"/>
+<contactref element="VBUS" pad="1"/>
+<wire x1="-0.777384375" y1="-17.1175" x2="-20.6" y2="-25.1" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="J2" pad="2"/>
