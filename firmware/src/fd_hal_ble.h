@@ -35,5 +35,6 @@ void fd_hal_ble_characteristic_value_change(uint16_t uuid, uint8_t *data, uint16
 typedef void (*fd_hal_ble_timeslot_callback_t)(void);
 
 bool fd_hal_ble_timeslot_initialize(uint32_t distance_us, uint32_t length_us, fd_hal_ble_timeslot_callback_t callback);
+void fd_hal_ble_timeslot_close(void);
 
 #endif

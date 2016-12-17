@@ -60,9 +60,9 @@ void fd_WS2812B_data(const uint32_t *grbzs, uint32_t count) {
     const uint32_t *end = grbzs + count;
     while (grbzs < end) {
         uint32_t grbz = *grbzs++;
-        __disable_irq();
+//        __disable_irq();
         fd_WS2812B_grbz(grbz, &NRF_GPIO->OUTSET, &NRF_GPIO->OUTCLR, pin_bit);
-        __enable_irq();
+//        __enable_irq();
     }
 }
 

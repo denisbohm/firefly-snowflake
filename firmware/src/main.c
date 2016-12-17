@@ -72,10 +72,6 @@ void main_test_pattern(void) {
 }
 #endif
 
-void fd_snowflake_timeslot(void) {
-    fd_snowflake_step = true;
-}
-
 int main(void) {
     fd_hal_gpio_initialize();
 
@@ -112,17 +108,13 @@ int main(void) {
     fd_snowflake_step = false;
 
 #if USE_WITH_SOFTDEVICE == 1
+    fd_hal_ble_start_advertising();
     // 50 us to send BRG values to all LEDs
     // 50 us to reset the LED communication slot
     // 50 ms (20 Hz) between LED updates
-    bool result = fd_hal_ble_timeslot_initialize(50000, 100, fd_snowflake_timeslot);
+    bool result = fd_hal_ble_timeslot_initialize(50000, 1000, fd_snowflake_next_animation_step);
     fd_log_assert(result);
-    fd_hal_ble_start_advertising();
     while (true) {
-        if (fd_snowflake_step) {
-            fd_snowflake_next_animation_step();
-            fd_snowflake_step = false;
-        }
         fd_api_process();
         fd_hal_app_dispatch_and_wait();
     }
