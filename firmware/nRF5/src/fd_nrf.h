@@ -8,6 +8,7 @@
 
 #include "app_gpiote.h"
 #include "app_scheduler.h"
+#include "app_timer.h"
 #include "app_timer_appsh.h"
 #include "app_util_platform.h"
 #include "ble_hci.h"

@@ -11,6 +11,7 @@ import Cocoa
 class ColorOutAnimation: Animation {
 
     var name = "Color Out"
+    let intensity = 0.5
     let steps = 40
     let rampSteps = 20
     var index = 0
@@ -64,9 +65,9 @@ class ColorOutAnimation: Animation {
 
     func step() {
         for pixel in pixels {
-            let r = UInt32(round(pixel.red * 255.0))
-            let g = UInt32(round(pixel.green * 255.0))
-            let b = UInt32(round(pixel.blue * 255.0))
+            let r = UInt32(round(pixel.red * 255.0 * intensity))
+            let g = UInt32(round(pixel.green * 255.0 * intensity))
+            let b = UInt32(round(pixel.blue * 255.0 * intensity))
             let grbz = (g << 24) | (r << 16) | (b << 8)
             grbzs.append(grbz)
         }
@@ -81,6 +82,7 @@ class ColorOutAnimation: Animation {
         if index == 0 {
             colorIndex = (colorIndex + 1) % colors.count
             if colorIndex == 0 {
+                print("const uint32_t fd_breathe_grbzs[] = {")
                 var i = 0
                 for grbz in grbzs {
                     print(NSString(format: " 0x%08x,", grbz), terminator: "")
@@ -91,6 +93,20 @@ class ColorOutAnimation: Animation {
                     }
                 }
                 grbzs = []
+                print("};")
+                print()
+                print("const uint8_t fd_breathe_instructions[] = {")
+                for i in 0 ..< colors.count {
+                    print("    fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * \(i)),")
+                    print("    fd_snowflake_operation_sleep, fd_snowflake_operand(298),")
+                }
+                print("    fd_snowflake_operation_restart,")
+                print("};")
+                print()
+                print("const fd_snowflake_program_t fd_breathe_program = {")
+                print("    .instructions = fd_breathe_instructions,")
+                print("    .grbzs = fd_breathe_grbzs,")
+                print("};")
             }
         }
 

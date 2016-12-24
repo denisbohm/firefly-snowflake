@@ -32,9 +32,14 @@ void fd_hal_ble_gap_evt_disconnected(void);
 void fd_hal_ble_gap_evt_tx_complete(uint8_t count);
 void fd_hal_ble_characteristic_value_change(uint16_t uuid, uint8_t *data, uint16_t length);
 
-typedef void (*fd_hal_ble_timeslot_callback_t)(void);
+typedef enum {
+    fd_hal_ble_time_slot_callback_result_stop,
+    fd_hal_ble_time_slot_callback_result_continue,
+} fd_hal_ble_time_slot_callback_result_t;
 
-bool fd_hal_ble_timeslot_initialize(uint32_t distance_us, uint32_t length_us, fd_hal_ble_timeslot_callback_t callback);
-void fd_hal_ble_timeslot_close(void);
+typedef fd_hal_ble_time_slot_callback_result_t (*fd_hal_ble_time_slot_callback_t)(void);
+
+bool fd_hal_ble_time_slot_initialize(uint32_t distance_us, uint32_t length_us, fd_hal_ble_time_slot_callback_t callback);
+void fd_hal_ble_time_slot_close(void);
 
 #endif

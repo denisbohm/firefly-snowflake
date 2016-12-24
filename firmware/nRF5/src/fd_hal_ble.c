@@ -34,10 +34,10 @@ static ble_gap_conn_params_t fd_nrf5_ble_conn_params;
 static fd_nrf5_ble_service_t fd_nrf5_ble_service;
 static char fd_nrf5_ble_hardware_revision[16];
 static char fd_nrf5_ble_firmware_revision[16];
-static uint32_t fd_hal_ble_timeslot_distance_us;
-static uint32_t fd_hal_ble_timeslot_length_us;
-static fd_hal_ble_timeslot_callback_t fd_hal_ble_timeslot_callback;
-static nrf_radio_request_t fd_hal_ble_timeslot_request;
+static uint32_t fd_hal_ble_time_slot_distance_us;
+static uint32_t fd_hal_ble_time_slot_length_us;
+static fd_hal_ble_time_slot_callback_t fd_hal_ble_time_slot_callback;
+static nrf_radio_request_t fd_hal_ble_time_slot_request;
 static nrf_radio_signal_callback_return_param_t fd_hal_ble_signal_callback_return_param;
 
 __attribute__((weak)) void fd_hal_ble_characteristic_value_change(uint16_t uuid, uint8_t *data, uint16_t length) {
@@ -349,7 +349,7 @@ void fd_hal_ble_start_advertising(void) {
     adv_params.type = BLE_GAP_ADV_TYPE_ADV_IND;
     adv_params.p_peer_addr = NULL;
     adv_params.fp = BLE_GAP_ADV_FP_ANY;
-    adv_params.interval = 400; // 250 ms (0.625 ms units)
+    adv_params.interval = 1600; // 1 s (0.625 ms units)
     adv_params.timeout = 0;
     uint32_t err_code = sd_ble_gap_adv_start(&adv_params);
     APP_ERROR_CHECK(err_code);
@@ -388,12 +388,12 @@ uint32_t fd_hal_ble_set_characteristic_value(uint16_t service_uuid, uint16_t uui
 
 static
 uint32_t fd_hal_ble_request_next_event_earliest(void) {
-    fd_hal_ble_timeslot_request.request_type                = NRF_RADIO_REQ_TYPE_EARLIEST;
-    fd_hal_ble_timeslot_request.params.earliest.hfclk       = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
-    fd_hal_ble_timeslot_request.params.earliest.priority    = NRF_RADIO_PRIORITY_NORMAL;
-    fd_hal_ble_timeslot_request.params.earliest.length_us   = fd_hal_ble_timeslot_length_us;
-    fd_hal_ble_timeslot_request.params.earliest.timeout_us  = fd_hal_ble_timeslot_distance_us;
-    return sd_radio_request(&fd_hal_ble_timeslot_request);
+    fd_hal_ble_time_slot_request.request_type                = NRF_RADIO_REQ_TYPE_EARLIEST;
+    fd_hal_ble_time_slot_request.params.earliest.hfclk       = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
+    fd_hal_ble_time_slot_request.params.earliest.priority    = NRF_RADIO_PRIORITY_NORMAL;
+    fd_hal_ble_time_slot_request.params.earliest.length_us   = fd_hal_ble_time_slot_length_us;
+    fd_hal_ble_time_slot_request.params.earliest.timeout_us  = fd_hal_ble_time_slot_distance_us;
+    return sd_radio_request(&fd_hal_ble_time_slot_request);
 }
 
 static
@@ -422,19 +422,19 @@ void fd_hal_ble_sys_evt_handler(uint32_t evt_id) {
 }
 
 static
-nrf_radio_signal_callback_return_param_t *fd_hal_ble_timeslot_handler(uint8_t signal_type) {
+nrf_radio_signal_callback_return_param_t *fd_hal_ble_time_slot_handler(uint8_t signal_type) {
     fd_hal_ble_signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_NONE;
     switch (signal_type) {
-        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_START:
-            (*fd_hal_ble_timeslot_callback)();
-            fd_hal_ble_timeslot_request.request_type               = NRF_RADIO_REQ_TYPE_NORMAL;
-            fd_hal_ble_timeslot_request.params.normal.hfclk        = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
-            fd_hal_ble_timeslot_request.params.normal.priority     = NRF_RADIO_PRIORITY_HIGH;
-            fd_hal_ble_timeslot_request.params.normal.distance_us  = fd_hal_ble_timeslot_distance_us;
-            fd_hal_ble_timeslot_request.params.normal.length_us    = fd_hal_ble_timeslot_length_us;
-            fd_hal_ble_signal_callback_return_param.params.request.p_next = &fd_hal_ble_timeslot_request;
+        case NRF_RADIO_CALLBACK_SIGNAL_TYPE_START: {
+            fd_hal_ble_time_slot_callback_result_t result = (*fd_hal_ble_time_slot_callback)();
+            fd_hal_ble_time_slot_request.request_type               = NRF_RADIO_REQ_TYPE_NORMAL;
+            fd_hal_ble_time_slot_request.params.normal.hfclk        = NRF_RADIO_HFCLK_CFG_XTAL_GUARANTEED;
+            fd_hal_ble_time_slot_request.params.normal.priority     = NRF_RADIO_PRIORITY_HIGH;
+            fd_hal_ble_time_slot_request.params.normal.distance_us  = fd_hal_ble_time_slot_distance_us;
+            fd_hal_ble_time_slot_request.params.normal.length_us    = fd_hal_ble_time_slot_length_us;
+            fd_hal_ble_signal_callback_return_param.params.request.p_next = &fd_hal_ble_time_slot_request;
             fd_hal_ble_signal_callback_return_param.callback_action = NRF_RADIO_SIGNAL_CALLBACK_ACTION_REQUEST_AND_END;
-            break;
+        } break;
 
         case NRF_RADIO_CALLBACK_SIGNAL_TYPE_RADIO:
             break;
@@ -450,12 +450,12 @@ nrf_radio_signal_callback_return_param_t *fd_hal_ble_timeslot_handler(uint8_t si
     return &fd_hal_ble_signal_callback_return_param;
 }
 
-bool fd_hal_ble_timeslot_initialize(uint32_t distance_us, uint32_t length_us, fd_hal_ble_timeslot_callback_t callback) {
-    fd_hal_ble_timeslot_distance_us = distance_us;
-    fd_hal_ble_timeslot_length_us = length_us;
-    fd_hal_ble_timeslot_callback = callback;
+bool fd_hal_ble_time_slot_initialize(uint32_t distance_us, uint32_t length_us, fd_hal_ble_time_slot_callback_t callback) {
+    fd_hal_ble_time_slot_distance_us = distance_us;
+    fd_hal_ble_time_slot_length_us = length_us;
+    fd_hal_ble_time_slot_callback = callback;
 
-    uint32_t err_code = sd_radio_session_open(fd_hal_ble_timeslot_handler);
+    uint32_t err_code = sd_radio_session_open(fd_hal_ble_time_slot_handler);
     APP_ERROR_CHECK(err_code);
 
     err_code = fd_hal_ble_request_next_event_earliest();
@@ -467,8 +467,14 @@ bool fd_hal_ble_timeslot_initialize(uint32_t distance_us, uint32_t length_us, fd
     return true;
 }
 
-void fd_hal_ble_timeslot_close(void) {
+void fd_hal_ble_time_slot_close_handler(void *p_event_data, uint16_t event_size) {
     uint32_t err_code = sd_radio_session_close();
+    APP_ERROR_CHECK(err_code);
+}
+
+void fd_hal_ble_time_slot_close(void) {
+    // do the close on the main event thread
+    uint32_t err_code = app_sched_event_put(0, 0, fd_hal_ble_time_slot_close_handler);
     APP_ERROR_CHECK(err_code);
 }
 
