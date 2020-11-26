@@ -15,6 +15,12 @@ static void fd_hal_app_timer_1_handler(void *context) {
 }
 
 void fd_hal_app_initialize(void) {
+    NRF_CLOCK->TASKS_HFCLKSTART = 1;
+    while (NRF_CLOCK->EVENTS_HFCLKSTARTED == 0);
+
+    NRF_CLOCK->TASKS_LFCLKSTART = 1;
+    while (NRF_CLOCK->EVENTS_LFCLKSTARTED == 0);
+
     APP_GPIOTE_INIT(3);
     APP_SCHED_INIT(8, 32);
     APP_TIMER_INIT(APP_TIMER_PRESCALER, 8, app_timer_evt_schedule);

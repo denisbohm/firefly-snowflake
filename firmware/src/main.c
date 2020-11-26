@@ -63,16 +63,26 @@ fd_hal_ble_time_slot_callback_result_t fd_snowflake_time_slot(void) {
     return fd_hal_ble_time_slot_callback_result_continue;
 }
 
+void fd_snowflake_power_on_leds(void) {
+    // turn on LED power and wait for rail to come up
+    fd_snowflake_leds_powered = true;
+    fd_hal_gpio_on(FD_SNOWFLAKE_PIN_LED_POWER);
+    fd_hal_delay_us(500);
+}
+
+void fd_snowflake_power_off_leds(void) {
+    fd_hal_gpio_off(FD_SNOWFLAKE_PIN_LED_POWER);
+    fd_snowflake_leds_powered = false;
+}
+
 void fd_snowflake_start_time_slots(void) {
     if (fd_snowflake_leds_powered) {
         return;
     }
 
-    // turn on LED power and wait for rail to come up
-    fd_snowflake_leds_powered = true;
-    fd_hal_gpio_on(FD_SNOWFLAKE_PIN_LED_POWER);
-    fd_hal_delay_us(500);
+    fd_snowflake_power_on_leds();
 
+#if USE_WITH_SOFTDEVICE == 1
     // start LED animation time slots
     //
     // 50 ms (20 Hz) between LED updates
@@ -80,6 +90,7 @@ void fd_snowflake_start_time_slots(void) {
     // !!! 1000 us seems to be lowest value Nordic time slot SDK will accept (or hello hard fault) -denis
     bool result = fd_hal_ble_time_slot_initialize(50000, 1000, fd_snowflake_time_slot);
     fd_log_assert(result);
+#endif
 }
 
 void fd_snowflake_stop_time_slots(void) {
@@ -87,10 +98,11 @@ void fd_snowflake_stop_time_slots(void) {
         return;
     }
 
+#if USE_WITH_SOFTDEVICE == 1
     fd_hal_ble_time_slot_close();
+#endif
 
-    fd_hal_gpio_off(FD_SNOWFLAKE_PIN_LED_POWER);
-    fd_snowflake_leds_powered = false;
+    fd_snowflake_power_off_leds();
 }
 
 void fd_snowflake_illuminate(uint32_t step_count, uint32_t grbz_index) {
@@ -165,7 +177,11 @@ void fd_snowflake_start(const fd_snowflake_program_t *program) {
 int main(void) {
     fd_hal_gpio_initialize();
     fd_snowflake_leds_powered = false;
+    fd_WS2812B_initialize(FD_SNOWFLAKE_PIN_LED_DIN);
 
+    fd_hal_app_initialize();
+
+#if USE_WITH_SOFTDEVICE == 1
     uint8_t service_base[16] = {0xB3, 0x49, 0x1D, 0x48, 0x47, 0x86, 0x79, 0x97, 0x07, 0x48, 0x3E, 0x55, 0x00, 0x00, 0x7F, 0x57};
     fd_hal_ble_configuration_t configuration = {
         .hardware_revision = {
@@ -185,26 +201,26 @@ int main(void) {
         .service_base = service_base,
         .service_uuid = 0xB8B4,
     };
-    fd_hal_app_initialize();
     fd_hal_ble_initialize(&configuration);
     fd_api_initialize();
     fd_api_initialize_ble();
-
-    fd_WS2812B_initialize(FD_SNOWFLAKE_PIN_LED_DIN);
+    fd_hal_ble_start_advertising();
+#endif
 
 #if USE_WITH_SOFTDEVICE == 1
-    fd_hal_ble_start_advertising();
     fd_snowflake_start(&fd_breathe_program);
     while (true) {
         fd_api_process();
         fd_hal_app_dispatch_and_wait();
     }
 #else
+    fd_snowflake_start(&fd_breathe_program);
     while (true) {
         if (fd_snowflake_leds_powered) {
-            fd_snowflake_step();
+            fd_snowflake_time_slot();
         }
         fd_hal_delay_ms(50);
+        app_sched_execute();
         // !!! need to do something about timers...
     }
 #endif

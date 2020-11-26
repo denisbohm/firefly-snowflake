@@ -5,15 +5,20 @@
 #include "fd_nrf.h"
 
 void fd_hal_gpio_initialize(void) {
+#if defined(FD_SNOWFLAKE_PIN_LED_POWER)
     nrf_gpio_pin_clear(FD_SNOWFLAKE_PIN_LED_POWER);
     nrf_gpio_cfg_output(FD_SNOWFLAKE_PIN_LED_POWER);
+#endif
 
     nrf_gpio_pin_clear(FD_SNOWFLAKE_PIN_LED_DIN);
     nrf_gpio_cfg_output(FD_SNOWFLAKE_PIN_LED_DIN);
 
+#if defined(FD_SNOWFLAKE_PIN_USB_POWERED)
     nrf_gpio_cfg_input(FD_SNOWFLAKE_PIN_USB_POWERED, NRF_GPIO_PIN_NOPULL);
+#endif
+#if defined(FD_SNOWFLAKE_PIN_CHARGE_STATUS)
     nrf_gpio_cfg_input(FD_SNOWFLAKE_PIN_CHARGE_STATUS, NRF_GPIO_PIN_NOPULL);
-
+#endif
 /*
 #define FD_SNOWFLAKE_PIN_BATTERY_SENSE 24
 #define FD_SNOWFLAKE_PIN_BATTERY_DIV_2 1

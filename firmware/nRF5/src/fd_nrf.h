@@ -15,6 +15,7 @@
 #include "ble_advdata.h"
 #include "ble_dis.h"
 #include "nrf_delay.h"
+#include "nrf_drv_common.h"
 #include "nrf_gpio.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"

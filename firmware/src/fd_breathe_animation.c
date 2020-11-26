@@ -783,27 +783,29 @@ const uint32_t fd_breathe_grbzs[] = {
  0x00000000, 0x00020100, 0x00030200, 0x00020100, 0x00000000, 0x00030200, 0x00060400, 0x00030200, 0x00000000, 0x00020100, 0x00030200, 0x00020100, 0x00000000,
 };
 
+#define SLEEP_DURATION 5
+
 const uint8_t fd_breathe_instructions[] = {
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 0),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 1),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 2),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 3),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 4),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 5),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 6),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 7),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 8),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * 9),
-    fd_snowflake_operation_sleep, fd_snowflake_operand(298),
+    fd_snowflake_operation_sleep, fd_snowflake_operand(SLEEP_DURATION),
     fd_snowflake_operation_restart,
 };
 

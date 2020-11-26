@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -144,15 +145,15 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="frames">
+<library name="frames" urn="urn:adsk.eagle:library:229">
 <description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
 <packages>
 </packages>
 <symbols>
-<symbol name="FRAME_A_L">
+<symbol name="FRAME_A_L" urn="urn:adsk.eagle:symbol:13882/1" library_version="1">
 <frame x1="0" y1="0" x2="279.4" y2="215.9" columns="6" rows="5" layer="94" border-bottom="no"/>
 </symbol>
-<symbol name="DOCFIELD">
+<symbol name="DOCFIELD" urn="urn:adsk.eagle:symbol:13864/1" library_version="1">
 <wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
 <wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.1016" layer="94"/>
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
@@ -183,7 +184,7 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="FRAME_A_L" prefix="FRAME" uservalue="yes">
+<deviceset name="FRAME_A_L" urn="urn:adsk.eagle:component:13939/1" prefix="FRAME" uservalue="yes" library_version="1">
 <description>&lt;b&gt;FRAME&lt;/b&gt; A Size , 8 1/2 x 11 INCH, Landscape&lt;p&gt;</description>
 <gates>
 <gate name="G$1" symbol="FRAME_A_L" x="0" y="0" addlevel="always"/>
@@ -203,7 +204,7 @@
 <description>Generated from &lt;b&gt;firefly-ice.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs.ulp</description>
 <packages>
-<package name="WS2812B">
+<package name="WS2812B" urn="urn:adsk.eagle:footprint:21252002/1">
 <smd name="1" x="-2.15" y="1.65" dx="1.5" dy="0.9" layer="1"/>
 <smd name="2" x="-2.15" y="-1.65" dx="1.5" dy="0.9" layer="1"/>
 <smd name="3" x="2.15" y="-1.65" dx="1.5" dy="0.9" layer="1"/>
@@ -1484,7 +1485,7 @@ Metric Code Size 1608</description>
 <text x="-0.8" y="0.65" size="1.016" layer="25">&gt;NAME</text>
 <text x="-0.8" y="-1.65" size="1.016" layer="27">&gt;VALUE</text>
 </package>
-<package name="C0805">
+<package name="C0805" urn="urn:adsk.eagle:footprint:21251982/1">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
 Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <wire x1="-1.525" y1="0.925" x2="1.525" y2="0.925" width="0.0508" layer="39"/>
@@ -1834,7 +1835,7 @@ tantalum</description>
 <text x="-2.2" y="5.5" size="1.27" layer="21">-</text>
 <text x="-2.5" y="-6.5" size="1.27" layer="21">+</text>
 </package>
-<package name="BMD-200">
+<package name="BMD-200" urn="urn:adsk.eagle:footprint:21251917/1">
 <smd name="5" x="-1.5" y="-8.25" dx="1" dy="1.5" layer="1"/>
 <smd name="6" x="0" y="-8.25" dx="1" dy="1.5" layer="1"/>
 <smd name="7" x="1.5" y="-8.25" dx="1" dy="1.5" layer="1"/>
@@ -1869,10 +1870,10 @@ tantalum</description>
 <wire x1="-8.5" y1="8.5" x2="-3.6" y2="8.5" width="0.127" layer="21"/>
 <wire x1="-3.6" y1="8.5" x2="8.5" y2="8.5" width="0.127" layer="21"/>
 <wire x1="8.5" y1="8.5" x2="8.5" y2="-8.5" width="0.127" layer="21"/>
-<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="39"/>
-<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="40"/>
 <wire x1="-8.5" y1="-1.5" x2="-3.6" y2="-1.5" width="0.127" layer="51"/>
 <wire x1="-3.6" y1="-1.5" x2="-3.6" y2="8.5" width="0.127" layer="51"/>
+<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="39"/>
+<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="40"/>
 <circle x="-7.5" y="-6.8" radius="0.2" width="0.127" layer="21"/>
 <text x="-0.9" y="-0.5" size="1.27" layer="25">&gt;NAME</text>
 </package>
@@ -2069,7 +2070,7 @@ tantalum</description>
 <wire x1="-5.1" y1="-2.1" x2="-5.1" y2="2.1" width="0.127" layer="51"/>
 <text x="-1.5" y="2.2" size="1.27" layer="51">&gt;Name</text>
 </package>
-<package name="614105150721">
+<package name="614105150721" urn="urn:adsk.eagle:footprint:21253717/1">
 <pad name="1" x="-1.3" y="0.22" drill="0.3302"/>
 <pad name="3" x="0" y="0.22" drill="0.3302"/>
 <pad name="5" x="1.3" y="0.22" drill="0.3302"/>
@@ -2163,7 +2164,7 @@ tantalum</description>
 <text x="-1.1" y="1.1" size="0.5" layer="25">&gt;Name</text>
 <text x="-0.9" y="0.6" size="0.2" layer="51">&gt;Name</text>
 </package>
-<package name="SOT-23-5">
+<package name="SOT-23-5" urn="urn:adsk.eagle:footprint:21253732/1">
 <wire x1="-1.04" y1="2.24" x2="0.96" y2="2.24" width="0.127" layer="21"/>
 <wire x1="0.96" y1="2.24" x2="0.96" y2="-2.26" width="0.127" layer="21"/>
 <wire x1="0.96" y1="-2.26" x2="-1.04" y2="-2.26" width="0.127" layer="21"/>
@@ -3050,7 +3051,7 @@ chip</description>
 <text x="-0.889" y="0.889" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.889" y="-2.032" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="R0805">
+<package name="R0805" urn="urn:adsk.eagle:footprint:21251916/1">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
 chip</description>
 <wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="21"/>
@@ -3558,7 +3559,7 @@ type V526-0, grid 2.5 mm</description>
 <smd name="C" x="-1.725" y="0" dx="1.2" dy="0.85" layer="1" rot="R90"/>
 <text x="-1.4" y="1.1" size="1.27" layer="25">&gt;Name</text>
 </package>
-<package name="SOD-123FL">
+<package name="SOD-123FL" urn="urn:adsk.eagle:footprint:21253953/1">
 <wire x1="-1.8" y1="-0.8" x2="-1.8" y2="0.8" width="0.127" layer="21"/>
 <wire x1="-1.8" y1="0.8" x2="1.8" y2="0.8" width="0.127" layer="21"/>
 <wire x1="1.8" y1="0.8" x2="1.8" y2="-0.8" width="0.127" layer="21"/>
@@ -3572,7 +3573,7 @@ type V526-0, grid 2.5 mm</description>
 <smd name="C" x="-1.475" y="0" dx="1.25" dy="1.22" layer="1" rot="R90"/>
 <text x="-1.1" y="0.97" size="1.27" layer="25">&gt;Name</text>
 </package>
-<package name="SOT-23-3">
+<package name="SOT-23-3" urn="urn:adsk.eagle:footprint:21254062/1">
 <wire x1="-1.04" y1="2.24" x2="0.96" y2="2.24" width="0.127" layer="21"/>
 <wire x1="0.96" y1="2.24" x2="0.96" y2="-2.26" width="0.127" layer="21"/>
 <wire x1="0.96" y1="-2.26" x2="-1.04" y2="-2.26" width="0.127" layer="21"/>
@@ -3583,7 +3584,7 @@ type V526-0, grid 2.5 mm</description>
 <circle x="-0.6" y="1.8" radius="0.22360625" width="0.127" layer="21"/>
 <text x="-0.2" y="1.6" size="0.4064" layer="25">&gt;Name</text>
 </package>
-<package name="SOT-23-6">
+<package name="SOT-23-6" urn="urn:adsk.eagle:footprint:21253949/1">
 <wire x1="-1.6" y1="1.6" x2="1.6" y2="1.6" width="0.127" layer="21"/>
 <wire x1="1.6" y1="1.6" x2="1.6" y2="-1.6" width="0.127" layer="21"/>
 <wire x1="1.6" y1="-1.6" x2="-1.6" y2="-1.6" width="0.127" layer="21"/>
@@ -3593,11 +3594,11 @@ type V526-0, grid 2.5 mm</description>
 <smd name="3" x="-1.4" y="-0.95" dx="1.4" dy="0.6" layer="1"/>
 <smd name="4" x="1.4" y="-0.95" dx="1.4" dy="0.6" layer="1"/>
 <smd name="5" x="1.4" y="0" dx="1.4" dy="0.6" layer="1"/>
+<smd name="6" x="1.4" y="0.95" dx="1.4" dy="0.6" layer="1"/>
 <circle x="-2" y="1.8" radius="0.22360625" width="0.127" layer="21"/>
 <text x="-1.5" y="1.7" size="1.27" layer="25">&gt;Name</text>
-<smd name="6" x="1.4" y="0.95" dx="1.4" dy="0.6" layer="1"/>
 </package>
-<package name="TSOT-5">
+<package name="TSOT-5" urn="urn:adsk.eagle:footprint:21253942/1">
 <wire x1="-0.8" y1="1.45" x2="0.8" y2="1.45" width="0.127" layer="21"/>
 <wire x1="0.8" y1="1.45" x2="0.8" y2="-1.45" width="0.127" layer="21"/>
 <wire x1="0.8" y1="-1.45" x2="-0.8" y2="-1.45" width="0.127" layer="21"/>
@@ -3620,10 +3621,97 @@ type V526-0, grid 2.5 mm</description>
 <pad name="1" x="0" y="0" drill="0.6" shape="long" rot="R90"/>
 <text x="-0.8" y="1.3" size="1" layer="25">&gt;Name</text>
 </package>
+<package name="10118193">
+<smd name="3" x="0" y="0" dx="0.4" dy="1.35" layer="1"/>
+<smd name="4" x="0.65" y="0" dx="0.4" dy="1.35" layer="1"/>
+<smd name="5" x="1.3" y="0" dx="0.4" dy="1.35" layer="1"/>
+<smd name="2" x="-0.65" y="0" dx="0.4" dy="1.35" layer="1"/>
+<smd name="1" x="-1.3" y="0" dx="0.4" dy="1.35" layer="1"/>
+<wire x1="-3.95" y1="-4.125" x2="3.95" y2="-4.125" width="0.127" layer="21"/>
+<text x="-1.4" y="-3.77" size="0.5" layer="49">pcb edge</text>
+<pad name="PA" x="-3.3" y="-2.675" drill="1.2"/>
+<pad name="PB" x="3.3" y="-2.675" drill="1.2" thermals="no"/>
+<wire x1="-4" y1="0.7" x2="4" y2="0.7" width="0.127" layer="21"/>
+<wire x1="4" y1="0.7" x2="4" y2="-4.8" width="0.127" layer="21"/>
+<wire x1="4" y1="-4.8" x2="-4" y2="-4.8" width="0.127" layer="21"/>
+<wire x1="-4" y1="-4.8" x2="-4" y2="0.7" width="0.127" layer="21"/>
+<text x="-1.1" y="-3" size="1.27" layer="25">&gt;Name</text>
+</package>
 <package name="PROBE-0985">
 <pad name="1" x="0" y="0" drill="0.6"/>
+<text x="-2.54" y="1.27" size="0.6096" layer="25">&gt;Name</text>
 </package>
 </packages>
+<packages3d>
+<package3d name="R0805" urn="urn:adsk.eagle:package:21251918/2" type="model">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<packageinstances>
+<packageinstance name="R0805"/>
+</packageinstances>
+</package3d>
+<package3d name="C0805" urn="urn:adsk.eagle:package:21251983/2" type="model">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
+<packageinstances>
+<packageinstance name="C0805"/>
+</packageinstances>
+</package3d>
+<package3d name="WS2812B" urn="urn:adsk.eagle:package:21252003/2" type="model">
+<description>4-SOJ, 3.30 mm pitch, 5.40 mm span, 5.00 X 5.00 X 1.70 mm body
+&lt;p&gt;4-pin SOJ package with 3.30 mm pitch, 5.40 mm span with body size 5.00 X 5.00 X 1.70 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="WS2812B"/>
+</packageinstances>
+</package3d>
+<package3d name="614105150721" urn="urn:adsk.eagle:package:21253720/2" type="model">
+<packageinstances>
+<packageinstance name="614105150721"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-5" urn="urn:adsk.eagle:package:21253733/2" type="model">
+<description>5-SOT23, 0.95 mm pitch, 2.40 mm span, 2.90 X 1.30 X 1.10 mm body
+&lt;p&gt;5-pin SOT23 package with 0.95 mm pitch, 2.40 mm span with body size 2.90 X 1.30 X 1.10 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-5"/>
+</packageinstances>
+</package3d>
+<package3d name="TSOT-5" urn="urn:adsk.eagle:package:21253943/2" type="model">
+<description>5-SOT23, 0.95 mm pitch, 2.80 mm span, 2.90 X 1.60 X 1.00 mm body
+&lt;p&gt;5-pin SOT23 package with 0.95 mm pitch, 2.80 mm span with body size 2.90 X 1.60 X 1.00 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="TSOT-5"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-6" urn="urn:adsk.eagle:package:21253950/2" type="model">
+<description>6-SOT23, 0.95 mm pitch, 3.00 mm span, 3.10 X 1.80 X 1.10 mm body
+&lt;p&gt;6-pin SOT23 package with 0.95 mm pitch, 3.00 mm span with body size 3.10 X 1.80 X 1.10 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-6"/>
+</packageinstances>
+</package3d>
+<package3d name="SOD-123FL" urn="urn:adsk.eagle:package:21253954/2" type="model">
+<description>SOD, 3.80 mm span, 2.90 X 1.80 X 1.00 mm body
+&lt;p&gt;SOD package with 3.80 mm span with body size 2.90 X 1.80 X 1.00 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOD-123FL"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-3" urn="urn:adsk.eagle:package:21254063/2" type="model">
+<description>3-SOTFL, 0.95 mm pitch, 2.50 mm span, 3.10 X 1.90 X 0.90 mm body
+&lt;p&gt;3-pin SOTFL package with 0.95 mm pitch, 2.50 mm span with body size 3.10 X 1.90 X 0.90 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-3"/>
+</packageinstances>
+</package3d>
+<package3d name="BMD-200" urn="urn:adsk.eagle:package:21251919/3" type="model">
+<description>16-Chiparray 4-Side Flat, 1.50 mm pitch, 17.00 X 17.00 X 0.80 mm body
+&lt;p&gt;16-pin Chiparray 4-Side Flat package with 1.50 mm pitch with body size 17.00 X 17.00 X 0.80 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="BMD-200"/>
+</packageinstances>
+</package3d>
+</packages3d>
 <symbols>
 <symbol name="WS2812B">
 <wire x1="-3.81" y1="0.508" x2="-5.08" y2="-1.524" width="0.254" layer="94"/>
@@ -3796,7 +3884,6 @@ type V526-0, grid 2.5 mm</description>
 <pin name="ID" x="7.62" y="-2.54" visible="pin" length="short" rot="R180"/>
 <text x="-3.175" y="3.81" size="2.54" layer="94" ratio="10" rot="R270">USB</text>
 <text x="-4.318" y="9.271" size="1.778" layer="95" ratio="10">&gt;NAME</text>
-<text x="-6.096" y="-6.858" size="1.778" layer="96" ratio="10" rot="R90">&gt;VALUE</text>
 </symbol>
 <symbol name="TC2030-SWD">
 <wire x1="-15.24" y1="10.16" x2="15.24" y2="10.16" width="0.254" layer="94"/>
@@ -3930,6 +4017,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="VDD" pad="1"/>
 <connect gate="G$1" pin="VSS" pad="3"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21252003/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4485,6 +4575,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21251983/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4716,6 +4809,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="GND" pad="1 2 3 4 7 10 19 26 27 28"/>
 <connect gate="G$1" pin="VCC" pad="18"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21251919/3"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4812,6 +4908,21 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="GND" pad="5"/>
 <connect gate="G$1" pin="ID" pad="4"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21253720/2"/>
+</package3dinstances>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="10118193" package="10118193">
+<connects>
+<connect gate="G$1" pin="5V" pad="1"/>
+<connect gate="G$1" pin="D+" pad="3"/>
+<connect gate="G$1" pin="D-" pad="2"/>
+<connect gate="G$1" pin="GND" pad="5"/>
+<connect gate="G$1" pin="ID" pad="4"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -4864,6 +4975,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="VDD" pad="4"/>
 <connect gate="G$1" pin="VSS" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21253733/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5286,6 +5400,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21251918/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5563,6 +5680,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="A" pad="A"/>
 <connect gate="G$1" pin="C" pad="C"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21253954/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5580,6 +5700,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="G" pad="1"/>
 <connect gate="G$1" pin="S" pad="2"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21254063/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5598,6 +5721,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="VIN" pad="4 6"/>
 <connect gate="G$1" pin="VOUT" pad="1"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21253950/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5616,6 +5742,9 @@ type V526-0, grid 2.5 mm</description>
 <connect gate="G$1" pin="IN" pad="1"/>
 <connect gate="G$1" pin="OUT" pad="5"/>
 </connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:21253943/2"/>
+</package3dinstances>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -5665,186 +5794,186 @@ type V526-0, grid 2.5 mm</description>
 </class>
 </classes>
 <parts>
-<part name="FRAME1" library="frames" deviceset="FRAME_A_L" device="" value="FRAME">
+<part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device="" value="FRAME">
 <attribute name="REV" value="1.0.0"/>
 </part>
-<part name="U8" library="firefly" deviceset="WS2812B" device="">
+<part name="U8" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U9" library="firefly" deviceset="WS2812B" device="">
+<part name="U9" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V1" library="firefly" deviceset="GND" device=""/>
 <part name="V2" library="firefly" deviceset="GND" device=""/>
-<part name="U10" library="firefly" deviceset="WS2812B" device="">
+<part name="U10" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U11" library="firefly" deviceset="WS2812B" device="">
+<part name="U11" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V3" library="firefly" deviceset="GND" device=""/>
 <part name="V4" library="firefly" deviceset="GND" device=""/>
-<part name="U12" library="firefly" deviceset="WS2812B" device="">
+<part name="U12" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U13" library="firefly" deviceset="WS2812B" device="">
+<part name="U13" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V5" library="firefly" deviceset="GND" device=""/>
 <part name="V6" library="firefly" deviceset="GND" device=""/>
-<part name="U1" library="firefly" deviceset="WS2812B" device="">
+<part name="U1" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U2" library="firefly" deviceset="WS2812B" device="">
+<part name="U2" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V7" library="firefly" deviceset="GND" device=""/>
 <part name="V8" library="firefly" deviceset="GND" device=""/>
-<part name="U3" library="firefly" deviceset="WS2812B" device="">
+<part name="U3" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U4" library="firefly" deviceset="WS2812B" device="">
+<part name="U4" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V9" library="firefly" deviceset="GND" device=""/>
 <part name="V10" library="firefly" deviceset="GND" device=""/>
-<part name="U5" library="firefly" deviceset="WS2812B" device="">
+<part name="U5" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
-<part name="U6" library="firefly" deviceset="WS2812B" device="">
+<part name="U6" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V11" library="firefly" deviceset="GND" device=""/>
 <part name="V12" library="firefly" deviceset="GND" device=""/>
-<part name="U7" library="firefly" deviceset="WS2812B" device="">
+<part name="U7" library="firefly" deviceset="WS2812B" device="" package3d_urn="urn:adsk.eagle:package:21252003/2">
 <attribute name="MANUFACTURER" value="worldsemi"/>
 <attribute name="ORDERING-CODE" value="WS2812B"/>
 </part>
 <part name="V13" library="firefly" deviceset="GND" device=""/>
-<part name="C1" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C1" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V14" library="firefly" deviceset="GND" device=""/>
-<part name="C2" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C2" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V15" library="firefly" deviceset="GND" device=""/>
-<part name="C3" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C3" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V16" library="firefly" deviceset="GND" device=""/>
-<part name="C4" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C4" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V17" library="firefly" deviceset="GND" device=""/>
-<part name="C5" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C5" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V18" library="firefly" deviceset="GND" device=""/>
-<part name="C6" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C6" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V19" library="firefly" deviceset="GND" device=""/>
-<part name="C7" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C7" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V20" library="firefly" deviceset="GND" device=""/>
-<part name="C8" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C8" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V21" library="firefly" deviceset="GND" device=""/>
-<part name="C9" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C9" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V22" library="firefly" deviceset="GND" device=""/>
-<part name="C10" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C10" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V23" library="firefly" deviceset="GND" device=""/>
-<part name="C11" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C11" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V24" library="firefly" deviceset="GND" device=""/>
-<part name="C12" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C12" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V25" library="firefly" deviceset="GND" device=""/>
-<part name="C13" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C13" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
 <part name="V26" library="firefly" deviceset="GND" device=""/>
-<part name="U20" library="firefly" deviceset="BMD-200" device="">
+<part name="U20" library="firefly" deviceset="BMD-200" device="" package3d_urn="urn:adsk.eagle:package:21251919/3">
 <attribute name="MANUFACTURER" value="Rigado LLC"/>
 <attribute name="ORDERING-CODE" value="BMD-200-A-R"/>
 </part>
 <part name="B1" library="firefly" deviceset="BATTERY_SHAPE" device="DTP401525" value="BATTERY_SHAPEDTP401525">
 <attribute name="DNS" value="true"/>
 </part>
-<part name="J1" library="firefly" deviceset="USB-5PIN" device="614105150721" value="USB-5PIN614105150721">
+<part name="J1" library="firefly" deviceset="USB-5PIN" device="614105150721" package3d_urn="urn:adsk.eagle:package:21253720/2" value="USB-5PIN614105150721">
 <attribute name="MANUFACTURER" value="Wurth Electronics Inc"/>
 <attribute name="ORDERING-CODE" value="614105150721"/>
 </part>
 <part name="J2" library="firefly" deviceset="TC2030-SWD" device="">
 <attribute name="DNS" value="true"/>
 </part>
-<part name="U21" library="firefly" deviceset="MCP73832" device="SOT-23-5">
+<part name="U21" library="firefly" deviceset="MCP73832" device="SOT-23-5" package3d_urn="urn:adsk.eagle:package:21253733/2">
 <attribute name="MANUFACTURER" value="Microchip Technology"/>
 <attribute name="ORDERING-CODE" value="MCP73832T-2ACI/OT"/>
 </part>
-<part name="C14" library="firefly" deviceset="C-US" device="C0805" value="4.7uF">
+<part name="C14" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="4.7uF">
 <attribute name="MANUFACTURER" value="Yaego"/>
 <attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475"/>
 </part>
-<part name="C15" library="firefly" deviceset="C-US" device="C0805" value="4.7uF">
+<part name="C15" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="4.7uF">
 <attribute name="MANUFACTURER" value="Yaego"/>
 <attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475"/>
 </part>
-<part name="R1" library="firefly" deviceset="R-US" device="R0805" value="15k">
+<part name="R1" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="15k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0715KL"/>
 </part>
-<part name="R2" library="firefly" deviceset="R-US" device="R0805" value="10k">
+<part name="R2" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0710KL"/>
 </part>
-<part name="D1" library="firefly" deviceset="D-US" device="SOD-123FL" value="D-USSOD-123FL">
+<part name="D1" library="firefly" deviceset="D-US" device="SOD-123FL" package3d_urn="urn:adsk.eagle:package:21253954/2" value="D-USSOD-123FL">
 <attribute name="MANUFACTURER" value="ON Semiconductor"/>
 <attribute name="ORDERING-CODE" value="MBR120VLSFT1G"/>
 </part>
-<part name="Q1" library="firefly" deviceset="FET-P" device="SOT-23-3">
+<part name="Q1" library="firefly" deviceset="FET-P" device="SOT-23-3" package3d_urn="urn:adsk.eagle:package:21254063/2">
 <attribute name="MANUFACTURER" value="Toshiba Semiconductor and Storage"/>
 <attribute name="ORDERING-CODE" value="SSM3J328R,LF"/>
 </part>
-<part name="U23" library="firefly" deviceset="TPS22929D" device="">
+<part name="U23" library="firefly" deviceset="TPS22929D" device="" package3d_urn="urn:adsk.eagle:package:21253950/2">
 <attribute name="MANUFACTURER" value="Toshiba Semiconductor and Storage"/>
 <attribute name="ORDERING-CODE" value="TCK107AF,LF"/>
 </part>
-<part name="C16" library="firefly" deviceset="C-US" device="C0805" value="10uF">
+<part name="C16" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="10uF">
 <attribute name="MANUFACTURER" value="YAEGO"/>
 <attribute name="ORDERING-CODE" value="CC0805KKX5R6BB106"/>
 </part>
@@ -5860,39 +5989,39 @@ type V526-0, grid 2.5 mm</description>
 <part name="V34" library="firefly" deviceset="GND" device=""/>
 <part name="U$1" library="firefly" deviceset="VCC" device=""/>
 <part name="V35" library="firefly" deviceset="GND" device=""/>
-<part name="R4" library="firefly" deviceset="R-US" device="R0805" value="10k">
+<part name="R4" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0710KL"/>
 </part>
-<part name="R5" library="firefly" deviceset="R-US" device="R0805" value="10k">
+<part name="R5" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0710KL"/>
 </part>
-<part name="U22" library="firefly" deviceset="ADP160" device="">
+<part name="U22" library="firefly" deviceset="ADP160" device="" package3d_urn="urn:adsk.eagle:package:21253943/2">
 <attribute name="MANUFACTURER" value="Analog Devices Inc."/>
 <attribute name="ORDERING-CODE" value="ADP162AUJZ-3.3-R7"/>
 </part>
 <part name="V36" library="firefly" deviceset="GND" device=""/>
-<part name="C17" library="firefly" deviceset="C-US" device="C0805" value="1uF">
+<part name="C17" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="1uF">
 <attribute name="MANUFACTURER" value="YAGEO"/>
 <attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105"/>
 </part>
 <part name="V37" library="firefly" deviceset="GND" device=""/>
-<part name="C18" library="firefly" deviceset="C-US" device="C0805" value="1uF">
+<part name="C18" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="1uF">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105"/>
 </part>
 <part name="V38" library="firefly" deviceset="GND" device=""/>
 <part name="U$5" library="firefly" deviceset="VCC" device=""/>
-<part name="R3" library="firefly" deviceset="R-US" device="R0805" value="10k">
+<part name="R3" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0710KL"/>
 </part>
-<part name="R6" library="firefly" deviceset="R-US" device="R0805" value="10k">
+<part name="R6" library="firefly" deviceset="R-US" device="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k">
 <attribute name="MANUFACTURER" value="Yageo"/>
 <attribute name="ORDERING-CODE" value="RC0805FR-0710KL"/>
 </part>
-<part name="C19" library="firefly" deviceset="C-US" device="C0805" value="100nF">
+<part name="C19" library="firefly" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF">
 <attribute name="MANUFACTURER" value="Yaego"/>
 <attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104"/>
 </part>
@@ -5910,244 +6039,335 @@ type V526-0, grid 2.5 mm</description>
 <text x="210.82" y="33.02" size="2.54" layer="94">1.0.0</text>
 </plain>
 <instances>
-<instance part="FRAME1" gate="G$1" x="0" y="0">
+<instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes">
 <attribute name="REV" x="0" y="0" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="FRAME1" gate="G$2" x="172.72" y="0"/>
-<instance part="U8" gate="G$1" x="81.28" y="185.42">
+<instance part="FRAME1" gate="G$2" x="172.72" y="0" smashed="yes">
+<attribute name="LAST_DATE_TIME" x="185.42" y="1.27" size="2.54" layer="94"/>
+<attribute name="SHEET" x="259.08" y="1.27" size="2.54" layer="94"/>
+<attribute name="DRAWING_NAME" x="190.5" y="19.05" size="2.54" layer="94"/>
+</instance>
+<instance part="U8" gate="G$1" x="81.28" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="81.28" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="81.28" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="71.12" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="U9" gate="G$1" x="114.3" y="185.42">
+<instance part="U9" gate="G$1" x="114.3" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="114.3" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="114.3" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="104.14" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="V1" gate="GND" x="81.28" y="165.1"/>
-<instance part="V2" gate="GND" x="114.3" y="165.1"/>
-<instance part="U10" gate="G$1" x="147.32" y="185.42">
+<instance part="V1" gate="GND" x="81.28" y="165.1" smashed="yes"/>
+<instance part="V2" gate="GND" x="114.3" y="165.1" smashed="yes"/>
+<instance part="U10" gate="G$1" x="147.32" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="147.32" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="147.32" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="137.16" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="U11" gate="G$1" x="180.34" y="185.42">
+<instance part="U11" gate="G$1" x="180.34" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="180.34" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="180.34" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="170.18" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="V3" gate="GND" x="147.32" y="165.1"/>
-<instance part="V4" gate="GND" x="180.34" y="165.1"/>
-<instance part="U12" gate="G$1" x="213.36" y="185.42">
+<instance part="V3" gate="GND" x="147.32" y="165.1" smashed="yes"/>
+<instance part="V4" gate="GND" x="180.34" y="165.1" smashed="yes"/>
+<instance part="U12" gate="G$1" x="213.36" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="213.36" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="213.36" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="203.2" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="U13" gate="G$1" x="246.38" y="185.42">
+<instance part="U13" gate="G$1" x="246.38" y="185.42" smashed="yes">
 <attribute name="ORDERING-CODE" x="246.38" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="246.38" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="236.22" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="V5" gate="GND" x="213.36" y="165.1"/>
-<instance part="V6" gate="GND" x="246.38" y="165.1"/>
-<instance part="U1" gate="G$1" x="81.28" y="134.62">
+<instance part="V5" gate="GND" x="213.36" y="165.1" smashed="yes"/>
+<instance part="V6" gate="GND" x="246.38" y="165.1" smashed="yes"/>
+<instance part="U1" gate="G$1" x="81.28" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="81.28" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="81.28" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="71.12" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="U2" gate="G$1" x="114.3" y="134.62">
+<instance part="U2" gate="G$1" x="114.3" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="114.3" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="114.3" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="104.14" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="V7" gate="GND" x="81.28" y="114.3"/>
-<instance part="V8" gate="GND" x="114.3" y="114.3"/>
-<instance part="U3" gate="G$1" x="147.32" y="134.62">
+<instance part="V7" gate="GND" x="81.28" y="114.3" smashed="yes"/>
+<instance part="V8" gate="GND" x="114.3" y="114.3" smashed="yes"/>
+<instance part="U3" gate="G$1" x="147.32" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="147.32" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="147.32" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="137.16" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="U4" gate="G$1" x="180.34" y="134.62">
+<instance part="U4" gate="G$1" x="180.34" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="180.34" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="180.34" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="170.18" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="V9" gate="GND" x="147.32" y="114.3"/>
-<instance part="V10" gate="GND" x="180.34" y="114.3"/>
-<instance part="U5" gate="G$1" x="213.36" y="134.62">
+<instance part="V9" gate="GND" x="147.32" y="114.3" smashed="yes"/>
+<instance part="V10" gate="GND" x="180.34" y="114.3" smashed="yes"/>
+<instance part="U5" gate="G$1" x="213.36" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="213.36" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="213.36" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="203.2" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="U6" gate="G$1" x="246.38" y="134.62">
+<instance part="U6" gate="G$1" x="246.38" y="134.62" smashed="yes">
 <attribute name="ORDERING-CODE" x="246.38" y="134.62" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="246.38" y="134.62" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="236.22" y="146.05" size="1.778" layer="95"/>
 </instance>
-<instance part="V11" gate="GND" x="213.36" y="114.3"/>
-<instance part="V12" gate="GND" x="246.38" y="114.3"/>
-<instance part="U7" gate="G$1" x="48.26" y="185.42">
+<instance part="V11" gate="GND" x="213.36" y="114.3" smashed="yes"/>
+<instance part="V12" gate="GND" x="246.38" y="114.3" smashed="yes"/>
+<instance part="U7" gate="G$1" x="48.26" y="185.42" smashed="yes">
 <attribute name="MANUFACTURER" x="48.26" y="185.42" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="48.26" y="185.42" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="38.1" y="196.85" size="1.778" layer="95"/>
 </instance>
-<instance part="V13" gate="GND" x="48.26" y="165.1"/>
-<instance part="C1" gate="G$1" x="93.98" y="147.32">
+<instance part="V13" gate="GND" x="48.26" y="165.1" smashed="yes"/>
+<instance part="C1" gate="G$1" x="93.98" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="93.98" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="93.98" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="94.996" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="94.996" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V14" gate="GND" x="93.98" y="137.16"/>
-<instance part="C2" gate="G$1" x="127" y="147.32">
+<instance part="V14" gate="GND" x="93.98" y="137.16" smashed="yes"/>
+<instance part="C2" gate="G$1" x="127" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="127" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="127" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="128.016" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="128.016" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V15" gate="GND" x="127" y="137.16"/>
-<instance part="C3" gate="G$1" x="160.02" y="147.32">
+<instance part="V15" gate="GND" x="127" y="137.16" smashed="yes"/>
+<instance part="C3" gate="G$1" x="160.02" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="160.02" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="160.02" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="161.036" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="161.036" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V16" gate="GND" x="160.02" y="137.16"/>
-<instance part="C4" gate="G$1" x="193.04" y="147.32">
+<instance part="V16" gate="GND" x="160.02" y="137.16" smashed="yes"/>
+<instance part="C4" gate="G$1" x="193.04" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="193.04" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="193.04" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="194.056" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="194.056" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V17" gate="GND" x="193.04" y="137.16"/>
-<instance part="C5" gate="G$1" x="226.06" y="147.32">
+<instance part="V17" gate="GND" x="193.04" y="137.16" smashed="yes"/>
+<instance part="C5" gate="G$1" x="226.06" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="226.06" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="226.06" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="227.076" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="227.076" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V18" gate="GND" x="226.06" y="137.16"/>
-<instance part="C6" gate="G$1" x="259.08" y="147.32">
+<instance part="V18" gate="GND" x="226.06" y="137.16" smashed="yes"/>
+<instance part="C6" gate="G$1" x="259.08" y="147.32" smashed="yes">
 <attribute name="ORDERING-CODE" x="259.08" y="147.32" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="259.08" y="147.32" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="260.096" y="147.955" size="1.778" layer="95"/>
+<attribute name="VALUE" x="260.096" y="143.129" size="1.778" layer="96"/>
 </instance>
-<instance part="V19" gate="GND" x="259.08" y="137.16"/>
-<instance part="C7" gate="G$1" x="60.96" y="198.12">
+<instance part="V19" gate="GND" x="259.08" y="137.16" smashed="yes"/>
+<instance part="C7" gate="G$1" x="60.96" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="60.96" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="60.96" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="61.976" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="61.976" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V20" gate="GND" x="60.96" y="187.96"/>
-<instance part="C8" gate="G$1" x="93.98" y="198.12">
+<instance part="V20" gate="GND" x="60.96" y="187.96" smashed="yes"/>
+<instance part="C8" gate="G$1" x="93.98" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="93.98" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="93.98" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="94.996" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="94.996" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V21" gate="GND" x="93.98" y="187.96"/>
-<instance part="C9" gate="G$1" x="127" y="198.12">
+<instance part="V21" gate="GND" x="93.98" y="187.96" smashed="yes"/>
+<instance part="C9" gate="G$1" x="127" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="127" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="127" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="128.016" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="128.016" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V22" gate="GND" x="127" y="187.96"/>
-<instance part="C10" gate="G$1" x="160.02" y="198.12">
+<instance part="V22" gate="GND" x="127" y="187.96" smashed="yes"/>
+<instance part="C10" gate="G$1" x="160.02" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="160.02" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="160.02" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="161.036" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="161.036" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V23" gate="GND" x="160.02" y="187.96"/>
-<instance part="C11" gate="G$1" x="193.04" y="198.12">
+<instance part="V23" gate="GND" x="160.02" y="187.96" smashed="yes"/>
+<instance part="C11" gate="G$1" x="193.04" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="193.04" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="193.04" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="194.056" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="194.056" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V24" gate="GND" x="193.04" y="187.96"/>
-<instance part="C12" gate="G$1" x="226.06" y="198.12">
+<instance part="V24" gate="GND" x="193.04" y="187.96" smashed="yes"/>
+<instance part="C12" gate="G$1" x="226.06" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="226.06" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="226.06" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="227.076" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="227.076" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V25" gate="GND" x="226.06" y="187.96"/>
-<instance part="C13" gate="G$1" x="259.08" y="198.12">
+<instance part="V25" gate="GND" x="226.06" y="187.96" smashed="yes"/>
+<instance part="C13" gate="G$1" x="259.08" y="198.12" smashed="yes">
 <attribute name="ORDERING-CODE" x="259.08" y="198.12" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="259.08" y="198.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="260.096" y="198.755" size="1.778" layer="95"/>
+<attribute name="VALUE" x="260.096" y="193.929" size="1.778" layer="96"/>
 </instance>
-<instance part="V26" gate="GND" x="259.08" y="187.96"/>
-<instance part="U20" gate="G$1" x="228.6" y="73.66">
+<instance part="V26" gate="GND" x="259.08" y="187.96" smashed="yes"/>
+<instance part="U20" gate="G$1" x="228.6" y="73.66" smashed="yes">
 <attribute name="ORDERING-CODE" x="228.6" y="73.66" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="228.6" y="73.66" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="213.36" y="97.79" size="1.778" layer="95"/>
 </instance>
-<instance part="B1" gate="G$1" x="81.28" y="96.52" rot="R270">
+<instance part="B1" gate="G$1" x="81.28" y="96.52" smashed="yes" rot="R270">
 <attribute name="DNS" x="81.28" y="96.52" size="1.778" layer="96" rot="R270" display="off"/>
 </instance>
-<instance part="J1" gate="G$1" x="15.24" y="68.58">
+<instance part="J1" gate="G$1" x="15.24" y="68.58" smashed="yes">
 <attribute name="MANUFACTURER" x="15.24" y="68.58" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="15.24" y="68.58" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="10.922" y="77.851" size="1.778" layer="95" ratio="10"/>
+<attribute name="VALUE" x="9.144" y="61.722" size="1.778" layer="96" ratio="10" rot="R90"/>
 </instance>
-<instance part="J2" gate="G$1" x="71.12" y="22.86">
+<instance part="J2" gate="G$1" x="71.12" y="22.86" smashed="yes">
 <attribute name="DNS" x="71.12" y="22.86" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="68.58" y="22.86" size="1.27" layer="94"/>
 </instance>
-<instance part="U21" gate="G$1" x="66.04" y="71.12">
+<instance part="U21" gate="G$1" x="66.04" y="71.12" smashed="yes">
 <attribute name="MANUFACTURER" x="66.04" y="71.12" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="66.04" y="71.12" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="55.88" y="77.47" size="1.27" layer="95"/>
 </instance>
-<instance part="C14" gate="G$1" x="88.9" y="78.74">
+<instance part="C14" gate="G$1" x="88.9" y="78.74" smashed="yes">
 <attribute name="MANUFACTURER" x="88.9" y="78.74" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="88.9" y="78.74" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="89.916" y="79.375" size="1.778" layer="95"/>
+<attribute name="VALUE" x="89.916" y="74.549" size="1.778" layer="96"/>
 </instance>
-<instance part="C15" gate="G$1" x="40.64" y="68.58">
+<instance part="C15" gate="G$1" x="40.64" y="68.58" smashed="yes">
 <attribute name="MANUFACTURER" x="40.64" y="68.58" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="40.64" y="68.58" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="41.656" y="69.215" size="1.778" layer="95"/>
+<attribute name="VALUE" x="41.656" y="64.389" size="1.778" layer="96"/>
 </instance>
-<instance part="R1" gate="G$1" x="83.82" y="55.88" rot="R90">
+<instance part="R1" gate="G$1" x="83.82" y="55.88" smashed="yes" rot="R90">
 <attribute name="MANUFACTURER" x="83.82" y="55.88" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="ORDERING-CODE" x="83.82" y="55.88" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="NAME" x="82.3214" y="52.07" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="87.122" y="52.07" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R2" gate="G$1" x="33.02" y="60.96" rot="R90">
+<instance part="R2" gate="G$1" x="33.02" y="60.96" smashed="yes" rot="R90">
 <attribute name="MANUFACTURER" x="33.02" y="60.96" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="ORDERING-CODE" x="33.02" y="60.96" size="1.778" layer="96" rot="R90" display="off"/>
+<attribute name="NAME" x="31.5214" y="57.15" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="36.322" y="57.15" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="D1" gate="G$1" x="114.3" y="88.9" rot="R270">
+<instance part="D1" gate="G$1" x="114.3" y="88.9" smashed="yes" rot="R270">
 <attribute name="MANUFACTURER" x="114.3" y="88.9" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="ORDERING-CODE" x="114.3" y="88.9" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="116.205" y="91.186" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="110.871" y="91.186" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="Q1" gate="G$1" x="104.14" y="86.36" rot="MR270">
+<instance part="Q1" gate="G$1" x="104.14" y="86.36" smashed="yes" rot="MR270">
 <attribute name="ORDERING-CODE" x="104.14" y="86.36" size="1.778" layer="96" rot="MR270" display="off"/>
 <attribute name="MANUFACTURER" x="104.14" y="86.36" size="1.778" layer="96" rot="MR270" display="off"/>
+<attribute name="NAME" x="101.6" y="80.01" size="1.778" layer="95" rot="MR270"/>
 </instance>
-<instance part="U23" gate="G$1" x="48.26" y="152.4">
+<instance part="U23" gate="G$1" x="48.26" y="152.4" smashed="yes">
 <attribute name="MANUFACTURER" x="48.26" y="152.4" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="48.26" y="152.4" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="38.1" y="158.75" size="1.27" layer="95"/>
 </instance>
-<instance part="C16" gate="G$1" x="10.16" y="149.86">
+<instance part="C16" gate="G$1" x="10.16" y="149.86" smashed="yes">
 <attribute name="MANUFACTURER" x="10.16" y="149.86" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="10.16" y="149.86" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="11.176" y="150.495" size="1.778" layer="95"/>
+<attribute name="VALUE" x="11.176" y="145.669" size="1.778" layer="96"/>
 </instance>
-<instance part="U$3" gate="G$1" x="228.6" y="104.14"/>
-<instance part="U$4" gate="G$1" x="71.12" y="40.64"/>
-<instance part="V27" gate="GND" x="10.16" y="139.7"/>
-<instance part="V28" gate="GND" x="71.12" y="2.54"/>
-<instance part="V29" gate="GND" x="228.6" y="40.64"/>
-<instance part="V30" gate="GND" x="40.64" y="58.42"/>
-<instance part="V31" gate="GND" x="66.04" y="55.88"/>
-<instance part="V32" gate="GND" x="83.82" y="45.72"/>
-<instance part="V33" gate="GND" x="88.9" y="68.58"/>
-<instance part="V34" gate="GND" x="25.4" y="58.42"/>
-<instance part="U$1" gate="G$1" x="33.02" y="68.58"/>
-<instance part="V35" gate="GND" x="33.02" y="76.2"/>
-<instance part="R4" gate="G$1" x="33.02" y="86.36" rot="R270">
+<instance part="U$3" gate="G$1" x="228.6" y="104.14" smashed="yes">
+<attribute name="VALUE" x="233.68" y="109.22" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$4" gate="G$1" x="71.12" y="40.64" smashed="yes">
+<attribute name="VALUE" x="76.2" y="45.72" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="V27" gate="GND" x="10.16" y="139.7" smashed="yes"/>
+<instance part="V28" gate="GND" x="71.12" y="2.54" smashed="yes"/>
+<instance part="V29" gate="GND" x="228.6" y="40.64" smashed="yes"/>
+<instance part="V30" gate="GND" x="40.64" y="58.42" smashed="yes"/>
+<instance part="V31" gate="GND" x="66.04" y="55.88" smashed="yes"/>
+<instance part="V32" gate="GND" x="83.82" y="45.72" smashed="yes"/>
+<instance part="V33" gate="GND" x="88.9" y="68.58" smashed="yes"/>
+<instance part="V34" gate="GND" x="25.4" y="58.42" smashed="yes"/>
+<instance part="U$1" gate="G$1" x="33.02" y="68.58" smashed="yes">
+<attribute name="VALUE" x="38.1" y="73.66" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="V35" gate="GND" x="33.02" y="76.2" smashed="yes"/>
+<instance part="R4" gate="G$1" x="33.02" y="86.36" smashed="yes" rot="R270">
 <attribute name="ORDERING-CODE" x="33.02" y="86.36" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="MANUFACTURER" x="33.02" y="86.36" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="34.5186" y="90.17" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="29.718" y="90.17" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R5" gate="G$1" x="33.02" y="101.6" rot="R270">
+<instance part="R5" gate="G$1" x="33.02" y="101.6" smashed="yes" rot="R270">
 <attribute name="ORDERING-CODE" x="33.02" y="101.6" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="MANUFACTURER" x="33.02" y="101.6" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="34.5186" y="105.41" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="29.718" y="105.41" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="U22" gate="G$1" x="152.4" y="81.28">
+<instance part="U22" gate="G$1" x="152.4" y="81.28" smashed="yes">
 <attribute name="MANUFACTURER" x="152.4" y="81.28" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="152.4" y="81.28" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="142.24" y="87.63" size="1.778" layer="95"/>
 </instance>
-<instance part="V36" gate="GND" x="152.4" y="66.04"/>
-<instance part="C17" gate="G$1" x="127" y="78.74">
+<instance part="V36" gate="GND" x="152.4" y="66.04" smashed="yes"/>
+<instance part="C17" gate="G$1" x="127" y="78.74" smashed="yes">
 <attribute name="MANUFACTURER" x="127" y="78.74" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="127" y="78.74" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="128.016" y="79.375" size="1.778" layer="95"/>
+<attribute name="VALUE" x="128.016" y="74.549" size="1.778" layer="96"/>
 </instance>
-<instance part="V37" gate="GND" x="127" y="68.58"/>
-<instance part="C18" gate="G$1" x="170.18" y="78.74">
+<instance part="V37" gate="GND" x="127" y="68.58" smashed="yes"/>
+<instance part="C18" gate="G$1" x="170.18" y="78.74" smashed="yes">
 <attribute name="MANUFACTURER" x="170.18" y="78.74" size="1.778" layer="96" display="off"/>
 <attribute name="ORDERING-CODE" x="170.18" y="78.74" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="171.196" y="79.375" size="1.778" layer="95"/>
+<attribute name="VALUE" x="171.196" y="74.549" size="1.778" layer="96"/>
 </instance>
-<instance part="V38" gate="GND" x="170.18" y="68.58"/>
-<instance part="U$5" gate="G$1" x="170.18" y="86.36"/>
-<instance part="R3" gate="G$1" x="144.78" y="30.48" rot="R270">
+<instance part="V38" gate="GND" x="170.18" y="68.58" smashed="yes"/>
+<instance part="U$5" gate="G$1" x="170.18" y="86.36" smashed="yes">
+<attribute name="VALUE" x="175.26" y="91.44" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R3" gate="G$1" x="144.78" y="30.48" smashed="yes" rot="R270">
 <attribute name="ORDERING-CODE" x="144.78" y="30.48" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="MANUFACTURER" x="144.78" y="30.48" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="146.2786" y="34.29" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="141.478" y="34.29" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R6" gate="G$1" x="144.78" y="15.24" rot="R270">
+<instance part="R6" gate="G$1" x="144.78" y="15.24" smashed="yes" rot="R270">
 <attribute name="ORDERING-CODE" x="144.78" y="15.24" size="1.778" layer="96" rot="R270" display="off"/>
 <attribute name="MANUFACTURER" x="144.78" y="15.24" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="146.2786" y="19.05" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="141.478" y="19.05" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="C19" gate="G$1" x="152.4" y="17.78">
+<instance part="C19" gate="G$1" x="152.4" y="17.78" smashed="yes">
 <attribute name="ORDERING-CODE" x="152.4" y="17.78" size="1.778" layer="96" display="off"/>
 <attribute name="MANUFACTURER" x="152.4" y="17.78" size="1.778" layer="96" display="off"/>
+<attribute name="NAME" x="153.416" y="18.415" size="1.778" layer="95"/>
+<attribute name="VALUE" x="153.416" y="13.589" size="1.778" layer="96"/>
 </instance>
-<instance part="V40" gate="GND" x="152.4" y="5.08"/>
-<instance part="V41" gate="GND" x="48.26" y="137.16"/>
-<instance part="B+" gate="G$1" x="96.52" y="96.52" rot="R90"/>
-<instance part="B-" gate="G$1" x="68.58" y="96.52" rot="R90"/>
-<instance part="V42" gate="GND" x="68.58" y="83.82"/>
-<instance part="VBUS" gate="G$1" x="25.4" y="83.82" rot="R90"/>
+<instance part="V40" gate="GND" x="152.4" y="5.08" smashed="yes"/>
+<instance part="V41" gate="GND" x="48.26" y="137.16" smashed="yes"/>
+<instance part="B+" gate="G$1" x="96.52" y="96.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="91.44" y="93.98" size="1.27" layer="94" rot="R90"/>
+</instance>
+<instance part="B-" gate="G$1" x="68.58" y="96.52" smashed="yes" rot="R90">
+<attribute name="NAME" x="63.5" y="93.98" size="1.27" layer="94" rot="R90"/>
+</instance>
+<instance part="V42" gate="GND" x="68.58" y="83.82" smashed="yes"/>
+<instance part="VBUS" gate="G$1" x="25.4" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="20.32" y="81.28" size="1.27" layer="94" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -6814,4 +7034,21 @@ type V526-0, grid 2.5 mm</description>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="8.2" severity="warning">
+Since Version 8.2, EAGLE supports online libraries. The ids
+of those online libraries will not be understood (or retained)
+with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
+</note>
+</compatibility>
 </eagle>

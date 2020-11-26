@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="10" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
@@ -47,7 +48,7 @@
 <layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
 <layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
@@ -55,11 +56,11 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
-<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="53" name="tGND_GNDA" color="7" fill="1" visible="no" active="yes"/>
 <layer number="54" name="bGND_GNDA" color="7" fill="1" visible="no" active="yes"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
@@ -143,6 +144,7 @@
 <layer number="254" name="OrgLBR" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyZDZhOGYz" projecturn="a.cGVyc29uYWw6dWUyZDZhOGYzIzIwMjAwNjI3MzExMzMxMjUx" f3durn="urn:adsk.wipprod:dm.lineage:-VR7cCArRc-MJ0gRvZ4d4w" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="3e38e2a8-d656-4769-9752-a04af06857f7" lastsyncedrevisionid="3e38e2a8-d656-4769-9752-a04af06857f7" lastboardhashguid="95183743-1e0f-02bf-5f0c-5981d2a1b38a" lastpushedtime="2020-06-27T23:52:53Z" linktopcb3d="true"/>
 <plain>
 <wire x1="10.922" y1="-18.923" x2="21.844" y2="0" width="0" layer="20"/>
 <wire x1="21.844" y1="0" x2="10.922" y2="18.923" width="0" layer="20"/>
@@ -164,7 +166,7 @@ Kyle Bohm &amp; Denis Bohm
 <description>Generated from &lt;b&gt;firefly-ice.sch&lt;/b&gt;&lt;p&gt;
 by exp-lbrs.ulp</description>
 <packages>
-<package name="WS2812B">
+<package name="WS2812B" urn="urn:adsk.eagle:footprint:21252002/1">
 <smd name="1" x="-2.15" y="1.65" dx="1.5" dy="0.9" layer="1"/>
 <smd name="2" x="-2.15" y="-1.65" dx="1.5" dy="0.9" layer="1"/>
 <smd name="3" x="2.15" y="-1.65" dx="1.5" dy="0.9" layer="1"/>
@@ -178,7 +180,7 @@ by exp-lbrs.ulp</description>
 <wire x1="2.5" y1="-1.5" x2="1.5" y2="-2.5" width="0.127" layer="21"/>
 <text x="-1.1" y="-0.4" size="1.27" layer="25">&gt;Name</text>
 </package>
-<package name="C0805">
+<package name="C0805" urn="urn:adsk.eagle:footprint:21251982/1">
 <description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
 Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <wire x1="-1.525" y1="0.925" x2="1.525" y2="0.925" width="0.0508" layer="39"/>
@@ -194,7 +196,7 @@ Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <smd name="2" x="0.95" y="0" dx="0.9" dy="1.3" layer="1"/>
 <text x="-1.535" y="1.062" size="1.27" layer="25">&gt;NAME</text>
 </package>
-<package name="BMD-200">
+<package name="BMD-200" urn="urn:adsk.eagle:footprint:21251917/1">
 <smd name="5" x="-1.5" y="-8.25" dx="1" dy="1.5" layer="1"/>
 <smd name="6" x="0" y="-8.25" dx="1" dy="1.5" layer="1"/>
 <smd name="7" x="1.5" y="-8.25" dx="1" dy="1.5" layer="1"/>
@@ -229,10 +231,10 @@ Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <wire x1="-8.5" y1="8.5" x2="-3.6" y2="8.5" width="0.127" layer="21"/>
 <wire x1="-3.6" y1="8.5" x2="8.5" y2="8.5" width="0.127" layer="21"/>
 <wire x1="8.5" y1="8.5" x2="8.5" y2="-8.5" width="0.127" layer="21"/>
-<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="39"/>
-<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="40"/>
 <wire x1="-8.5" y1="-1.5" x2="-3.6" y2="-1.5" width="0.127" layer="51"/>
 <wire x1="-3.6" y1="-1.5" x2="-3.6" y2="8.5" width="0.127" layer="51"/>
+<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="39"/>
+<rectangle x1="-8.5" y1="-1.5" x2="-3.6" y2="8.5" layer="40"/>
 <circle x="-7.5" y="-6.8" radius="0.2" width="0.127" layer="21"/>
 <text x="-0.9" y="-0.5" size="1.27" layer="25">&gt;NAME</text>
 </package>
@@ -248,7 +250,7 @@ Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <wire x1="-2.5" y1="11.5" x2="2.5" y2="11.5" width="0.127" layer="49"/>
 <wire x1="2.5" y1="11.5" x2="2.5" y2="13.5" width="0.127" layer="49"/>
 </package>
-<package name="614105150721">
+<package name="614105150721" urn="urn:adsk.eagle:footprint:21253717/1">
 <pad name="1" x="-1.3" y="0.22" drill="0.3302"/>
 <pad name="3" x="0" y="0.22" drill="0.3302"/>
 <pad name="5" x="1.3" y="0.22" drill="0.3302"/>
@@ -323,7 +325,7 @@ Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <vertex x="1.27" y="0.2413"/>
 </polygon>
 </package>
-<package name="SOT-23-5">
+<package name="SOT-23-5" urn="urn:adsk.eagle:footprint:21253732/1">
 <wire x1="-1.04" y1="2.24" x2="0.96" y2="2.24" width="0.127" layer="21"/>
 <wire x1="0.96" y1="2.24" x2="0.96" y2="-2.26" width="0.127" layer="21"/>
 <wire x1="0.96" y1="-2.26" x2="-1.04" y2="-2.26" width="0.127" layer="21"/>
@@ -336,7 +338,7 @@ Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
 <text x="-1.055" y="2.475" size="1.27" layer="25">&gt;NAME</text>
 <circle x="-0.6" y="1.8" radius="0.22360625" width="0.127" layer="21"/>
 </package>
-<package name="R0805">
+<package name="R0805" urn="urn:adsk.eagle:footprint:21251916/1">
 <description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
 chip</description>
 <wire x1="-0.41" y1="0.635" x2="0.41" y2="0.635" width="0.1524" layer="21"/>
@@ -353,7 +355,7 @@ chip</description>
 <text x="-0.762" y="1.016" size="1.27" layer="25">&gt;NAME</text>
 <text x="-0.762" y="-2.286" size="1.27" layer="27">&gt;VALUE</text>
 </package>
-<package name="SOD-123FL">
+<package name="SOD-123FL" urn="urn:adsk.eagle:footprint:21253953/1">
 <wire x1="-1.8" y1="-0.8" x2="-1.8" y2="0.8" width="0.127" layer="21"/>
 <wire x1="-1.8" y1="0.8" x2="1.8" y2="0.8" width="0.127" layer="21"/>
 <wire x1="1.8" y1="0.8" x2="1.8" y2="-0.8" width="0.127" layer="21"/>
@@ -367,7 +369,7 @@ chip</description>
 <smd name="C" x="-1.475" y="0" dx="1.25" dy="1.22" layer="1" rot="R90"/>
 <text x="-1.1" y="0.97" size="1.27" layer="25">&gt;Name</text>
 </package>
-<package name="SOT-23-3">
+<package name="SOT-23-3" urn="urn:adsk.eagle:footprint:21254062/1">
 <wire x1="-1.04" y1="2.24" x2="0.96" y2="2.24" width="0.127" layer="21"/>
 <wire x1="0.96" y1="2.24" x2="0.96" y2="-2.26" width="0.127" layer="21"/>
 <wire x1="0.96" y1="-2.26" x2="-1.04" y2="-2.26" width="0.127" layer="21"/>
@@ -378,7 +380,7 @@ chip</description>
 <circle x="-0.6" y="1.8" radius="0.22360625" width="0.127" layer="21"/>
 <text x="-0.2" y="1.6" size="0.4064" layer="25">&gt;Name</text>
 </package>
-<package name="SOT-23-6">
+<package name="SOT-23-6" urn="urn:adsk.eagle:footprint:21253949/1">
 <wire x1="-1.6" y1="1.6" x2="1.6" y2="1.6" width="0.127" layer="21"/>
 <wire x1="1.6" y1="1.6" x2="1.6" y2="-1.6" width="0.127" layer="21"/>
 <wire x1="1.6" y1="-1.6" x2="-1.6" y2="-1.6" width="0.127" layer="21"/>
@@ -388,11 +390,11 @@ chip</description>
 <smd name="3" x="-1.4" y="-0.95" dx="1.4" dy="0.6" layer="1"/>
 <smd name="4" x="1.4" y="-0.95" dx="1.4" dy="0.6" layer="1"/>
 <smd name="5" x="1.4" y="0" dx="1.4" dy="0.6" layer="1"/>
+<smd name="6" x="1.4" y="0.95" dx="1.4" dy="0.6" layer="1"/>
 <circle x="-2" y="1.8" radius="0.22360625" width="0.127" layer="21"/>
 <text x="-1.5" y="1.7" size="1.27" layer="25">&gt;Name</text>
-<smd name="6" x="1.4" y="0.95" dx="1.4" dy="0.6" layer="1"/>
 </package>
-<package name="TSOT-5">
+<package name="TSOT-5" urn="urn:adsk.eagle:footprint:21253942/1">
 <wire x1="-0.8" y1="1.45" x2="0.8" y2="1.45" width="0.127" layer="21"/>
 <wire x1="0.8" y1="1.45" x2="0.8" y2="-1.45" width="0.127" layer="21"/>
 <wire x1="0.8" y1="-1.45" x2="-0.8" y2="-1.45" width="0.127" layer="21"/>
@@ -416,6 +418,76 @@ chip</description>
 <text x="-0.4" y="-0.8" size="0.254" layer="51">&gt;Name</text>
 </package>
 </packages>
+<packages3d>
+<package3d name="R0805" urn="urn:adsk.eagle:package:21251918/2" type="model">
+<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
+chip</description>
+<packageinstances>
+<packageinstance name="R0805"/>
+</packageinstances>
+</package3d>
+<package3d name="C0805" urn="urn:adsk.eagle:package:21251983/2" type="model">
+<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+Source: http://www.vishay.com/docs/45017/vjsoldfo.pdf</description>
+<packageinstances>
+<packageinstance name="C0805"/>
+</packageinstances>
+</package3d>
+<package3d name="WS2812B" urn="urn:adsk.eagle:package:21252003/2" type="model">
+<description>4-SOJ, 3.30 mm pitch, 5.40 mm span, 5.00 X 5.00 X 1.70 mm body
+&lt;p&gt;4-pin SOJ package with 3.30 mm pitch, 5.40 mm span with body size 5.00 X 5.00 X 1.70 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="WS2812B"/>
+</packageinstances>
+</package3d>
+<package3d name="614105150721" urn="urn:adsk.eagle:package:21253720/2" type="model">
+<packageinstances>
+<packageinstance name="614105150721"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-5" urn="urn:adsk.eagle:package:21253733/2" type="model">
+<description>5-SOT23, 0.95 mm pitch, 2.40 mm span, 2.90 X 1.30 X 1.10 mm body
+&lt;p&gt;5-pin SOT23 package with 0.95 mm pitch, 2.40 mm span with body size 2.90 X 1.30 X 1.10 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-5"/>
+</packageinstances>
+</package3d>
+<package3d name="TSOT-5" urn="urn:adsk.eagle:package:21253943/2" type="model">
+<description>5-SOT23, 0.95 mm pitch, 2.80 mm span, 2.90 X 1.60 X 1.00 mm body
+&lt;p&gt;5-pin SOT23 package with 0.95 mm pitch, 2.80 mm span with body size 2.90 X 1.60 X 1.00 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="TSOT-5"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-6" urn="urn:adsk.eagle:package:21253950/2" type="model">
+<description>6-SOT23, 0.95 mm pitch, 3.00 mm span, 3.10 X 1.80 X 1.10 mm body
+&lt;p&gt;6-pin SOT23 package with 0.95 mm pitch, 3.00 mm span with body size 3.10 X 1.80 X 1.10 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-6"/>
+</packageinstances>
+</package3d>
+<package3d name="SOD-123FL" urn="urn:adsk.eagle:package:21253954/2" type="model">
+<description>SOD, 3.80 mm span, 2.90 X 1.80 X 1.00 mm body
+&lt;p&gt;SOD package with 3.80 mm span with body size 2.90 X 1.80 X 1.00 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOD-123FL"/>
+</packageinstances>
+</package3d>
+<package3d name="SOT-23-3" urn="urn:adsk.eagle:package:21254063/2" type="model">
+<description>3-SOTFL, 0.95 mm pitch, 2.50 mm span, 3.10 X 1.90 X 0.90 mm body
+&lt;p&gt;3-pin SOTFL package with 0.95 mm pitch, 2.50 mm span with body size 3.10 X 1.90 X 0.90 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="SOT-23-3"/>
+</packageinstances>
+</package3d>
+<package3d name="BMD-200" urn="urn:adsk.eagle:package:21251919/3" type="model">
+<description>16-Chiparray 4-Side Flat, 1.50 mm pitch, 17.00 X 17.00 X 0.80 mm body
+&lt;p&gt;16-pin Chiparray 4-Side Flat package with 1.50 mm pitch with body size 17.00 X 17.00 X 0.80 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="BMD-200"/>
+</packageinstances>
+</package3d>
+</packages3d>
 </library>
 </libraries>
 <attributes>
@@ -498,10 +570,14 @@ Please make sure your boards conform to these design rules.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -602,234 +678,243 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U8" library="firefly" package="WS2812B" value="WS2812B" x="-7.874" y="0" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="-7.874" y="0" size="1.778" layer="27" display="off"/>
+<element name="U8" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="-7.874" y="0" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="-7.874" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-8.974" y="-0.4" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="-7.874" y="0" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U9" library="firefly" package="WS2812B" value="WS2812B" x="-15.748" y="0" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="-15.748" y="0" size="1.778" layer="27" display="off"/>
+<element name="U9" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="-15.748" y="0" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="-15.748" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-16.848" y="-0.4" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="-15.748" y="0" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U10" library="firefly" package="WS2812B" value="WS2812B" x="-7.62" y="-7.62" locked="yes" smashed="yes" rot="R120">
-<attribute name="ORDERING-CODE" value="WS2812B" x="-7.62" y="-7.62" size="1.778" layer="27" rot="R120" display="off"/>
+<element name="U10" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="-7.62" y="-7.62" locked="yes" smashed="yes" rot="R120">
 <attribute name="MANUFACTURER" value="worldsemi" x="-7.62" y="-7.62" size="1.778" layer="27" rot="R120" display="off"/>
 <attribute name="NAME" x="-9.1235875" y="-8.272625" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="-7.62" y="-7.62" size="1.778" layer="27" rot="R120" display="off"/>
 </element>
-<element name="U11" library="firefly" package="WS2812B" value="WS2812B" x="0" y="-7.874" locked="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="-7.874" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="U11" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="0" y="-7.874" locked="yes" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="worldsemi" x="0" y="-7.874" size="1.778" layer="27" rot="R180" display="off"/>
+<attribute name="NAME" x="1.1" y="-7.474" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="-7.874" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="U12" library="firefly" package="WS2812B" value="WS2812B" x="7.62" y="-7.62" locked="yes" smashed="yes" rot="R60">
-<attribute name="ORDERING-CODE" value="WS2812B" x="7.62" y="-7.62" size="1.778" layer="27" rot="R60" display="off"/>
+<element name="U12" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="7.62" y="-7.62" locked="yes" smashed="yes" rot="R60">
 <attribute name="MANUFACTURER" value="worldsemi" x="7.62" y="-7.62" size="1.778" layer="27" rot="R60" display="off"/>
 <attribute name="NAME" x="5.816409375" y="-7.472625" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="7.62" y="-7.62" size="1.778" layer="27" rot="R60" display="off"/>
 </element>
-<element name="U13" library="firefly" package="WS2812B" value="WS2812B" x="0" y="-15.748" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="-15.748" size="1.778" layer="27" display="off"/>
+<element name="U13" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="0" y="-15.748" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="0" y="-15.748" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-1.1" y="-16.148" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="-15.748" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U1" library="firefly" package="WS2812B" value="WS2812B" x="0" y="15.748" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="15.748" size="1.778" layer="27" display="off"/>
+<element name="U1" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="0" y="15.748" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="0" y="15.748" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-1.1" y="15.348" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="15.748" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U2" library="firefly" package="WS2812B" value="WS2812B" x="-7.62" y="7.62" locked="yes" smashed="yes" rot="R60">
-<attribute name="ORDERING-CODE" value="WS2812B" x="-7.62" y="7.62" size="1.778" layer="27" rot="R60" display="off"/>
+<element name="U2" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="-7.62" y="7.62" locked="yes" smashed="yes" rot="R60">
 <attribute name="MANUFACTURER" value="worldsemi" x="-7.62" y="7.62" size="1.778" layer="27" rot="R60" display="off"/>
 <attribute name="NAME" x="-8.6235875" y="6.967371875" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="-7.62" y="7.62" size="1.778" layer="27" rot="R60" display="off"/>
 </element>
-<element name="U3" library="firefly" package="WS2812B" value="WS2812B" x="0" y="7.874" locked="yes" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="7.874" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="U3" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="0" y="7.874" locked="yes" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="worldsemi" x="0" y="7.874" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="1.1" y="8.274" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="0" y="7.874" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="U4" library="firefly" package="WS2812B" value="WS2812B" x="7.62" y="7.62" locked="yes" smashed="yes" rot="R120">
-<attribute name="ORDERING-CODE" value="WS2812B" x="7.62" y="7.62" size="1.778" layer="27" rot="R120" display="off"/>
+<element name="U4" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="7.62" y="7.62" locked="yes" smashed="yes" rot="R120">
 <attribute name="MANUFACTURER" value="worldsemi" x="7.62" y="7.62" size="1.778" layer="27" rot="R120" display="off"/>
 <attribute name="NAME" x="6.616409375" y="6.967371875" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="7.62" y="7.62" size="1.778" layer="27" rot="R120" display="off"/>
 </element>
-<element name="U5" library="firefly" package="WS2812B" value="WS2812B" x="15.748" y="0" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="15.748" y="0" size="1.778" layer="27" display="off"/>
+<element name="U5" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="15.748" y="0" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="15.748" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="14.648" y="-0.4" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="15.748" y="0" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U6" library="firefly" package="WS2812B" value="WS2812B" x="7.874" y="0" locked="yes">
-<attribute name="ORDERING-CODE" value="WS2812B" x="7.874" y="0" size="1.778" layer="27" display="off"/>
+<element name="U6" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="7.874" y="0" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="7.874" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="6.774" y="-0.4" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="WS2812B" x="7.874" y="0" size="1.778" layer="27" display="off"/>
 </element>
-<element name="U7" library="firefly" package="WS2812B" value="WS2812B" x="0" y="0" locked="yes">
+<element name="U7" library="firefly" package="WS2812B" package3d_urn="urn:adsk.eagle:package:21252003/2" value="WS2812B" x="0" y="0" locked="yes" smashed="yes">
 <attribute name="MANUFACTURER" value="worldsemi" x="0" y="0" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="-1.1" y="-0.4" size="1.27" layer="25"/>
 <attribute name="ORDERING-CODE" value="WS2812B" x="0" y="0" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C1" library="firefly" package="C0805" value="100nF" x="-4.944" y="17.372" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-4.944" y="17.372" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C1" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-4.944" y="17.372" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-4.944" y="17.372" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="-3.709" y="16.31" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-4.944" y="17.372" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C2" library="firefly" package="C0805" value="100nF" x="-13.462" y="7.366" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-13.462" y="7.366" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C2" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-13.462" y="7.366" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-13.462" y="7.366" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="-11.727" y="9.704" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-13.462" y="7.366" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C3" library="firefly" package="C0805" value="100nF" x="-0.8" y="11.716" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-0.8" y="11.716" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C3" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-0.8" y="11.716" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-0.8" y="11.716" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="3.035" y="12.354" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-0.8" y="11.716" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C4" library="firefly" package="C0805" value="100nF" x="10.574" y="3.816" smashed="yes">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="10.574" y="3.816" size="1.778" layer="27" display="off"/>
+<element name="C4" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="10.574" y="3.816" smashed="yes">
 <attribute name="MANUFACTURER" value="Yageo" x="10.574" y="3.816" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="6.939" y="2.678" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="10.574" y="3.816" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C5" library="firefly" package="C0805" value="100nF" x="14.606" y="3.79" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="14.606" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C5" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="14.606" y="3.79" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="14.606" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="16.341" y="5.928" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="14.606" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C6" library="firefly" package="C0805" value="100nF" x="4.064" y="3.81" smashed="yes">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="4.064" y="3.81" size="1.778" layer="27" display="off"/>
+<element name="C6" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="4.064" y="3.81" smashed="yes">
 <attribute name="MANUFACTURER" value="Yageo" x="4.064" y="3.81" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="3.129" y="4.772" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="4.064" y="3.81" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C7" library="firefly" package="C0805" value="100nF" x="-2.9" y="3.79" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-2.9" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C7" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-2.9" y="3.79" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-2.9" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="0.935" y="4.428" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-2.9" y="3.79" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C8" library="firefly" package="C0805" value="100nF" x="-10.93" y="3.81" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-10.93" y="3.81" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C8" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-10.93" y="3.81" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-10.93" y="3.81" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="-7.095" y="4.048" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-10.93" y="3.81" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C9" library="firefly" package="C0805" value="100nF" x="-15.748" y="3.81" smashed="yes">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-15.748" y="3.81" size="1.778" layer="27" display="off"/>
+<element name="C9" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-15.748" y="3.81" smashed="yes">
 <attribute name="MANUFACTURER" value="Yageo" x="-15.748" y="3.81" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="-17.283" y="4.872" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-15.748" y="3.81" size="1.778" layer="27" display="off"/>
 </element>
-<element name="C10" library="firefly" package="C0805" value="100nF" x="-7.038" y="-13.574" smashed="yes" rot="R270">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-7.038" y="-13.574" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C10" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-7.038" y="-13.574" smashed="yes" rot="R270">
 <attribute name="MANUFACTURER" value="Yageo" x="-7.038" y="-13.574" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="-11.161" y="-14.276" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-7.038" y="-13.574" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="C11" library="firefly" package="C0805" value="100nF" x="-0.8" y="-11.79" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-0.8" y="-11.79" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C11" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-0.8" y="-11.79" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="-0.8" y="-11.79" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="-2.165" y="-11.052" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-0.8" y="-11.79" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C12" library="firefly" package="C0805" value="100nF" x="3.762" y="-11.782" smashed="yes" rot="R180">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="3.762" y="-11.782" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="C12" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="3.762" y="-11.782" smashed="yes" rot="R180">
 <attribute name="MANUFACTURER" value="Yageo" x="3.762" y="-11.782" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="6.397" y="-12.744" size="1.27" layer="25" rot="R180"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="3.762" y="-11.782" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="C13" library="firefly" package="C0805" value="100nF" x="-4.438" y="-14.9" smashed="yes" rot="R270">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-4.438" y="-14.9" size="1.778" layer="27" rot="R270" display="off"/>
+<element name="C13" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="-4.438" y="-14.9" smashed="yes" rot="R270">
 <attribute name="MANUFACTURER" value="Yageo" x="-4.438" y="-14.9" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="NAME" x="-6.335" y="-17.676" size="1.27" layer="25"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="-4.438" y="-14.9" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="U20" library="firefly" package="BMD-200" value="BMD-200" x="7.62" y="6.604" rot="MR330">
-<attribute name="ORDERING-CODE" value="BMD-200-A-R" x="7.62" y="6.604" size="1.778" layer="28" rot="MR330" display="off"/>
+<element name="U20" library="firefly" package="BMD-200" package3d_urn="urn:adsk.eagle:package:21251919/3" value="BMD-200" x="7.62" y="6.604" smashed="yes" rot="MR330">
 <attribute name="MANUFACTURER" value="Rigado LLC" x="7.62" y="6.604" size="1.778" layer="28" rot="MR330" display="off"/>
+<attribute name="NAME" x="8.649425" y="6.620984375" size="1.27" layer="26" rot="MR330"/>
+<attribute name="ORDERING-CODE" value="BMD-200-A-R" x="7.62" y="6.604" size="1.778" layer="28" rot="MR330" display="off"/>
 </element>
-<element name="B1" library="firefly" package="DTP401525" value="BATTERY_SHAPEDTP401525" x="-5.588" y="-3.302" rot="MR150">
+<element name="B1" library="firefly" package="DTP401525" value="BATTERY_SHAPEDTP401525" x="-5.588" y="-3.302" smashed="yes" rot="MR150">
 <attribute name="DNS" value="true" x="-5.588" y="-3.302" size="1.778" layer="28" rot="MR150" display="off"/>
 </element>
-<element name="J1" library="firefly" package="614105150721" value="USB-5PIN614105150721" x="14.3002" y="-8.255" smashed="yes" rot="MR300">
+<element name="J1" library="firefly" package="614105150721" package3d_urn="urn:adsk.eagle:package:21253720/2" value="USB-5PIN614105150721" x="14.3002" y="-8.255" smashed="yes" rot="MR300">
 <attribute name="MANUFACTURER" value="Wurth Electronics Inc" x="14.3002" y="-8.255" size="1.778" layer="28" rot="MR300" display="off"/>
-<attribute name="ORDERING-CODE" value="614105150721" x="14.3002" y="-8.255" size="1.778" layer="28" rot="MR300" display="off"/>
 <attribute name="NAME" x="17.077959375" y="-5.952371875" size="1.27" layer="26" rot="MR300"/>
+<attribute name="ORDERING-CODE" value="614105150721" x="14.3002" y="-8.255" size="1.778" layer="28" rot="MR300" display="off"/>
 </element>
 <element name="J2" library="firefly" package="TC2030-MCP-NL" value="TC2030-SWD" x="-11.946" y="-11.438" smashed="yes" rot="MR60">
 <attribute name="DNS" value="true" x="-11.946" y="-11.438" size="1.778" layer="28" rot="MR60" display="off"/>
 <attribute name="NAME" x="-15.52865" y="-6.652925" size="1.27" layer="26" rot="MR60"/>
 </element>
-<element name="U21" library="firefly" package="SOT-23-5" value="MCP73832SOT-23-5" x="9.652" y="-6.35" smashed="yes" rot="MR120">
+<element name="U21" library="firefly" package="SOT-23-5" package3d_urn="urn:adsk.eagle:package:21253733/2" value="MCP73832SOT-23-5" x="9.652" y="-6.35" smashed="yes" rot="MR120">
 <attribute name="MANUFACTURER" value="Microchip Technology" x="9.652" y="-6.35" size="1.778" layer="28" rot="MR120" display="off"/>
-<attribute name="ORDERING-CODE" value="MCP73832T-2ACI/OT" x="9.652" y="-6.35" size="1.778" layer="28" rot="MR120" display="off"/>
 <attribute name="NAME" x="6.267915625" y="-5.80115625" size="0.8128" layer="26" rot="MR120"/>
+<attribute name="ORDERING-CODE" value="MCP73832T-2ACI/OT" x="9.652" y="-6.35" size="1.778" layer="28" rot="MR120" display="off"/>
 </element>
-<element name="C14" library="firefly" package="C0805" value="4.7uF" x="7.212" y="-17.018" smashed="yes" rot="MR270">
+<element name="C14" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="4.7uF" x="7.212" y="-17.018" smashed="yes" rot="MR270">
 <attribute name="MANUFACTURER" value="Yaego" x="7.212" y="-17.018" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475" x="7.212" y="-17.018" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="7.983" y="-17.95" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475" x="7.212" y="-17.018" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="C15" library="firefly" package="C0805" value="4.7uF" x="11.43" y="-3.21" smashed="yes" rot="MR120">
+<element name="C15" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="4.7uF" x="11.43" y="-3.21" smashed="yes" rot="MR120">
 <attribute name="MANUFACTURER" value="Yaego" x="11.43" y="-3.21" size="1.778" layer="28" rot="MR120" display="off"/>
-<attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475" x="11.43" y="-3.21" size="1.778" layer="28" rot="MR120" display="off"/>
 <attribute name="NAME" x="14.129653125" y="-2.082221875" size="0.8128" layer="26" rot="MR0"/>
+<attribute name="ORDERING-CODE" value="CC0805MKX5R8BB475" x="11.43" y="-3.21" size="1.778" layer="28" rot="MR120" display="off"/>
 </element>
-<element name="R1" library="firefly" package="R0805" value="15k" x="13.578" y="-4.132" smashed="yes" rot="MR300">
-<attribute name="MANUFACTURER" value="Yageo" x="13.578" y="-4.132" size="1.778" layer="28" rot="MR300" display="off"/>
-<attribute name="ORDERING-CODE" value="RC0805FR-0715KL" x="13.578" y="-4.132" size="1.778" layer="28" rot="MR300" display="off"/>
-<attribute name="NAME" x="16.17911875" y="-3.9640875" size="0.8128" layer="26" rot="MR0"/>
-<attribute name="VALUE" x="15.938734375" y="-4.6150875" size="1.27" layer="28" rot="MR300"/>
+<element name="R1" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="15k" x="13.478" y="-4.332" smashed="yes" rot="MR300">
+<attribute name="MANUFACTURER" value="Yageo" x="13.478" y="-4.332" size="1.778" layer="28" rot="MR300" display="off"/>
+<attribute name="NAME" x="16.07911875" y="-4.1640875" size="0.8128" layer="26" rot="MR0"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0715KL" x="13.478" y="-4.332" size="1.778" layer="28" rot="MR300" display="off"/>
+<attribute name="VALUE" x="15.838734375" y="-4.8150875" size="1.27" layer="28" rot="MR300"/>
 </element>
-<element name="R2" library="firefly" package="R0805" value="10k" x="9.144" y="-9.652" smashed="yes" rot="MR30">
+<element name="R2" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k" x="9.144" y="-9.652" smashed="yes" rot="MR30">
 <attribute name="MANUFACTURER" value="Yageo" x="9.144" y="-9.652" size="1.778" layer="28" rot="MR30" display="off"/>
-<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="9.144" y="-9.652" size="1.778" layer="28" rot="MR30" display="off"/>
 <attribute name="NAME" x="9.2119125" y="-11.653115625" size="0.8128" layer="26" rot="MR30"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="9.144" y="-9.652" size="1.778" layer="28" rot="MR30" display="off"/>
 <attribute name="VALUE" x="8.6609125" y="-12.01273125" size="1.27" layer="28" rot="MR30"/>
 </element>
-<element name="D1" library="firefly" package="SOD-123FL" value="D-USSOD-123FL" x="0.5" y="-16.38" smashed="yes" rot="MR330">
+<element name="D1" library="firefly" package="SOD-123FL" package3d_urn="urn:adsk.eagle:package:21253954/2" value="D-USSOD-123FL" x="0.5" y="-16.38" smashed="yes" rot="MR330">
 <attribute name="MANUFACTURER" value="ON Semiconductor" x="0.5" y="-16.38" size="1.778" layer="28" rot="MR330" display="off"/>
-<attribute name="ORDERING-CODE" value="MBR120VLSFT1G" x="0.5" y="-16.38" size="1.778" layer="28" rot="MR330" display="off"/>
 <attribute name="NAME" x="2.067628125" y="-17.589953125" size="0.8128" layer="26" rot="MR330"/>
+<attribute name="ORDERING-CODE" value="MBR120VLSFT1G" x="0.5" y="-16.38" size="1.778" layer="28" rot="MR330" display="off"/>
 </element>
-<element name="Q1" library="firefly" package="SOT-23-3" value="FET-PSOT-23-3" x="4.464" y="-16.156" smashed="yes" rot="MR180">
-<attribute name="ORDERING-CODE" value="SSM3J328R,LF" x="4.464" y="-16.156" size="1.778" layer="28" rot="MR180" display="off"/>
+<element name="Q1" library="firefly" package="SOT-23-3" package3d_urn="urn:adsk.eagle:package:21254063/2" value="FET-PSOT-23-3" x="4.464" y="-16.156" smashed="yes" rot="MR180">
 <attribute name="MANUFACTURER" value="Toshiba Semiconductor and Storage" x="4.464" y="-16.156" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="5.464" y="-14.656" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="ORDERING-CODE" value="SSM3J328R,LF" x="4.464" y="-16.156" size="1.778" layer="28" rot="MR180" display="off"/>
 </element>
-<element name="U23" library="firefly" package="SOT-23-6" value="TPS22929D" x="-12.316" y="11.6" smashed="yes" rot="MR120">
+<element name="U23" library="firefly" package="SOT-23-6" package3d_urn="urn:adsk.eagle:package:21253950/2" value="TPS22929D" x="-12.316" y="11.6" smashed="yes" rot="MR120">
 <attribute name="MANUFACTURER" value="Toshiba Semiconductor and Storage" x="-12.316" y="11.6" size="1.778" layer="28" rot="MR120" display="off"/>
-<attribute name="ORDERING-CODE" value="TCK107AF,LF" x="-12.316" y="11.6" size="1.778" layer="28" rot="MR120" display="off"/>
 <attribute name="NAME" x="-10.493759375" y="11.150959375" size="0.8128" layer="26" rot="MR120"/>
+<attribute name="ORDERING-CODE" value="TCK107AF,LF" x="-12.316" y="11.6" size="1.778" layer="28" rot="MR120" display="off"/>
 </element>
-<element name="C16" library="firefly" package="C0805" value="10uF" x="-10.03" y="14.648" smashed="yes" rot="MR30">
+<element name="C16" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="10uF" x="-10.03" y="14.648" smashed="yes" rot="MR30">
 <attribute name="MANUFACTURER" value="YAEGO" x="-10.03" y="14.648" size="1.778" layer="28" rot="MR30" display="off"/>
-<attribute name="ORDERING-CODE" value="CC0805KKX5R6BB106" x="-10.03" y="14.648" size="1.778" layer="28" rot="MR30" display="off"/>
 <attribute name="NAME" x="-8.669653125" y="15.00021875" size="0.8128" layer="26" rot="MR30"/>
+<attribute name="ORDERING-CODE" value="CC0805KKX5R6BB106" x="-10.03" y="14.648" size="1.778" layer="28" rot="MR30" display="off"/>
 </element>
-<element name="R4" library="firefly" package="R0805" value="10k" x="11.43" y="-13.208" smashed="yes" rot="MR180">
-<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="11.43" y="-13.208" size="1.778" layer="28" rot="MR180" display="off"/>
+<element name="R4" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k" x="11.43" y="-13.208" smashed="yes" rot="MR180">
 <attribute name="MANUFACTURER" value="Yageo" x="11.43" y="-13.208" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="10.268" y="-11.524" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="11.43" y="-13.208" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="VALUE" x="10.668" y="-10.922" size="1.27" layer="28" rot="MR180"/>
 </element>
-<element name="R5" library="firefly" package="R0805" value="10k" x="7.366" y="-13.716" smashed="yes" rot="MR180">
-<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="7.366" y="-13.716" size="1.778" layer="28" rot="MR180" display="off"/>
+<element name="R5" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k" x="7.366" y="-13.716" smashed="yes" rot="MR180">
 <attribute name="MANUFACTURER" value="Yageo" x="7.366" y="-13.716" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="NAME" x="6.704" y="-11.932" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="7.366" y="-13.716" size="1.778" layer="28" rot="MR180" display="off"/>
 <attribute name="VALUE" x="6.604" y="-11.43" size="1.27" layer="28" rot="MR180"/>
 </element>
-<element name="U22" library="firefly" package="TSOT-5" value="ADP160" x="-4.064" y="16.002" smashed="yes" rot="MR90">
+<element name="U22" library="firefly" package="TSOT-5" package3d_urn="urn:adsk.eagle:package:21253943/2" value="ADP160" x="-4.064" y="16.002" smashed="yes" rot="MR90">
 <attribute name="MANUFACTURER" value="Analog Devices Inc." x="-4.064" y="16.002" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="ORDERING-CODE" value="ADP162AUJZ-3.3-R7" x="-4.064" y="16.002" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="-2.947" y="12.811" size="0.8128" layer="26" rot="MR0"/>
+<attribute name="ORDERING-CODE" value="ADP162AUJZ-3.3-R7" x="-4.064" y="16.002" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C17" library="firefly" package="C0805" value="1uF" x="-6.858" y="15.494" smashed="yes" rot="MR90">
+<element name="C17" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="1uF" x="-6.858" y="15.494" smashed="yes" rot="MR90">
 <attribute name="MANUFACTURER" value="YAGEO" x="-6.858" y="15.494" size="1.778" layer="28" rot="MR90" display="off"/>
-<attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105" x="-6.858" y="15.494" size="1.778" layer="28" rot="MR90" display="off"/>
 <attribute name="NAME" x="-5.759" y="13.104" size="0.8128" layer="26" rot="MR0"/>
+<attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105" x="-6.858" y="15.494" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C18" library="firefly" package="C0805" value="1uF" x="-1.154" y="16.564" smashed="yes" rot="MR270">
+<element name="C18" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="1uF" x="-1.154" y="16.564" smashed="yes" rot="MR270">
 <attribute name="MANUFACTURER" value="Yageo" x="-1.154" y="16.564" size="1.778" layer="28" rot="MR270" display="off"/>
-<attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105" x="-1.154" y="16.564" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="NAME" x="-0.199" y="16.984" size="0.8128" layer="26" rot="MR180"/>
+<attribute name="ORDERING-CODE" value="CC0805KKX7R7BB105" x="-1.154" y="16.564" size="1.778" layer="28" rot="MR270" display="off"/>
 </element>
-<element name="R3" library="firefly" package="R0805" value="10k" x="19.126" y="0.552" smashed="yes" rot="MR30">
-<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="19.126" y="0.552" size="1.778" layer="28" rot="MR30" display="off"/>
+<element name="R3" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k" x="19.126" y="0.552" smashed="yes" rot="MR30">
 <attribute name="MANUFACTURER" value="Yageo" x="19.126" y="0.552" size="1.778" layer="28" rot="MR30" display="off"/>
 <attribute name="NAME" x="21.5939125" y="-0.149115625" size="0.8128" layer="26" rot="MR300"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="19.126" y="0.552" size="1.778" layer="28" rot="MR30" display="off"/>
 <attribute name="VALUE" x="18.6429125" y="-1.80873125" size="1.27" layer="28" rot="MR30"/>
 </element>
-<element name="R6" library="firefly" package="R0805" value="10k" x="15.896" y="-1.762" smashed="yes" rot="MR30">
-<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="15.896" y="-1.762" size="1.778" layer="28" rot="MR30" display="off"/>
-<attribute name="MANUFACTURER" value="Yageo" x="15.896" y="-1.762" size="1.778" layer="28" rot="MR30" display="off"/>
-<attribute name="NAME" x="16.963909375" y="-3.263115625" size="0.8128" layer="26" rot="MR120"/>
-<attribute name="VALUE" x="15.412909375" y="-4.12273125" size="1.27" layer="28" rot="MR30"/>
+<element name="R6" library="firefly" package="R0805" package3d_urn="urn:adsk.eagle:package:21251918/2" value="10k" x="15.496" y="-1.962" smashed="yes" rot="MR30">
+<attribute name="MANUFACTURER" value="Yageo" x="15.496" y="-1.962" size="1.778" layer="28" rot="MR30" display="off"/>
+<attribute name="NAME" x="16.563909375" y="-3.463115625" size="0.8128" layer="26" rot="MR120"/>
+<attribute name="ORDERING-CODE" value="RC0805FR-0710KL" x="15.496" y="-1.962" size="1.778" layer="28" rot="MR30" display="off"/>
+<attribute name="VALUE" x="15.012909375" y="-4.32273125" size="1.27" layer="28" rot="MR30"/>
 </element>
-<element name="C19" library="firefly" package="C0805" value="100nF" x="18.288" y="-1.016" smashed="yes" rot="MR210">
-<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="18.288" y="-1.016" size="1.778" layer="28" rot="MR210" display="off"/>
-<attribute name="MANUFACTURER" value="Yaego" x="18.288" y="-1.016" size="1.778" layer="28" rot="MR210" display="off"/>
-<attribute name="NAME" x="20.827653125" y="-1.36821875" size="0.8128" layer="26" rot="MR300"/>
+<element name="C19" library="firefly" package="C0805" package3d_urn="urn:adsk.eagle:package:21251983/2" value="100nF" x="18.188" y="-1.216" smashed="yes" rot="MR210">
+<attribute name="MANUFACTURER" value="Yaego" x="18.188" y="-1.216" size="1.778" layer="28" rot="MR210" display="off"/>
+<attribute name="NAME" x="20.727653125" y="-1.56821875" size="0.8128" layer="26" rot="MR300"/>
+<attribute name="ORDERING-CODE" value="CC0805KRX7R9BB104" x="18.188" y="-1.216" size="1.778" layer="28" rot="MR210" display="off"/>
 </element>
 <element name="B+" library="firefly" package="WP-28AWG" value="TARGET-PINWP-28AWG" x="9.56" y="-17.172" smashed="yes" rot="MR120">
 <attribute name="NAME" x="10.285834375" y="-17.51481875" size="0.8128" layer="26" rot="MR120"/>
@@ -837,7 +922,10 @@ Please make sure your boards conform to these design rules.</description>
 <element name="B-" library="firefly" package="WP-28AWG" value="TARGET-PINWP-28AWG" x="10.476" y="-15.294" smashed="yes" rot="MR120">
 <attribute name="NAME" x="11.501834375" y="-15.43681875" size="0.8128" layer="26" rot="MR120"/>
 </element>
-<element name="VBUS" library="firefly" package="TARGET-PIN-1MM" value="TARGET-PIN" x="-20.6" y="-25.1"/>
+<element name="VBUS" library="firefly" package="TARGET-PIN-1MM" value="TARGET-PIN" x="14.7" y="-3.8" smashed="yes">
+<attribute name="NAME" x="14.5" y="-3.1" size="0.5" layer="25"/>
+<attribute name="NAME" x="14.3" y="-4.6" size="0.254" layer="51"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -1131,7 +1219,6 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="3.9" y1="-7.2" x2="0.3" y2="-7.2" width="0.5" layer="16"/>
 <wire x1="0.3" y1="-7.2" x2="-2.6" y2="-4.3" width="0.5" layer="16"/>
 <wire x1="-2.6" y1="-4.3" x2="-2.6" y2="4.9" width="0.5" layer="16"/>
-<wire x1="-1.9238875" y1="6.3761125" x2="-1.774709375" y2="6.3761125" width="0.1524" layer="16"/>
 <wire x1="-13.130928125" y1="-10.655646875" x2="-13.2" y2="-10.92471875" width="0.1524" layer="16"/>
 <wire x1="-13.2" y1="-10.92471875" x2="-13.2" y2="-12.7" width="0.1524" layer="16"/>
 <wire x1="-13.2" y1="-12.7" x2="-12.7" y2="-13.2" width="0.1524" layer="16"/>
@@ -1183,19 +1270,20 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R1" pad="2"/>
 <contactref element="U21" pad="5"/>
 <contactref element="U20" pad="13"/>
-<wire x1="13.153" y1="-4.86811875" x2="13.153" y2="-4.951" width="0.4064" layer="16"/>
-<wire x1="13.153" y1="-4.951" x2="12.5" y2="-6.004" width="0.4064" layer="16"/>
-<wire x1="12.5" y1="-6.004" x2="12.080540625" y2="-6.204" width="0.4064" layer="16"/>
+<wire x1="13.053" y1="-5.06811875" x2="13.053" y2="-5.112259375" width="0.4064" layer="16"/>
+<wire x1="13.053" y1="-5.112259375" x2="12.5" y2="-6.004" width="0.4064" layer="16"/>
+<wire x1="12.5" y1="-6.004" x2="12.291021875" y2="-6.103640625" width="0.4064" layer="16"/>
+<wire x1="12.291021875" y1="-6.103640625" x2="12.080540625" y2="-6.204" width="0.4064" layer="16"/>
 <wire x1="12.080540625" y1="-6.204" x2="11.136065625" y2="-5.659525" width="0.4064" layer="16"/>
 <wire x1="1.975290625" y1="-0.119075" x2="2.194365625" y2="0.1" width="0.1524" layer="16"/>
 <wire x1="2.194365625" y1="0.1" x2="5.1" y2="0.1" width="0.1524" layer="16"/>
 <via x="5.1" y="0.1" extent="1-16" drill="0.3302"/>
 <wire x1="5.1" y1="0.1" x2="5.8" y2="0.8" width="0.1524" layer="1"/>
 <wire x1="5.8" y1="0.8" x2="10.2" y2="0.8" width="0.1524" layer="1"/>
-<wire x1="10.2" y1="0.8" x2="12.4" y2="-1.4" width="0.1524" layer="1"/>
-<wire x1="12.4" y1="-1.4" x2="12.4" y2="-6" width="0.1524" layer="1"/>
-<via x="12.4" y="-6" extent="1-16" drill="0.3302"/>
-<wire x1="12.4" y1="-6" x2="12.5" y2="-6.004" width="0.1524" layer="16"/>
+<wire x1="10.2" y1="0.8" x2="12.2" y2="-1.2" width="0.1524" layer="1"/>
+<wire x1="12.2" y1="-1.2" x2="12.2" y2="-6.1" width="0.1524" layer="1"/>
+<via x="12.2" y="-6.1" extent="1-16" drill="0.3302"/>
+<wire x1="12.2" y1="-6.1" x2="12.291021875" y2="-6.103640625" width="0.1524" layer="16"/>
 </signal>
 <signal name="BATTERY+">
 <contactref element="U21" pad="3"/>
@@ -1258,7 +1346,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="10.5" y1="-11.9" x2="6.1" y2="-11.9" width="0.5" layer="16"/>
 <via x="11.8" y="-9.5" extent="1-16" drill="0.3302"/>
 <contactref element="VBUS" pad="1"/>
-<wire x1="-0.777384375" y1="-17.1175" x2="-20.6" y2="-25.1" width="0" layer="19" extent="1-16"/>
+<wire x1="14.7" y1="-3.8" x2="14.7" y2="-7" width="0.5" layer="1"/>
 </signal>
 <signal name="SWDIO">
 <contactref element="J2" pad="2"/>
@@ -1400,8 +1488,10 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="R6" pad="1"/>
 <contactref element="U20" pad="12"/>
 <contactref element="C19" pad="1"/>
-<wire x1="16.632121875" y1="-2.187" x2="17.465278125" y2="-0.540996875" width="0.4064" layer="16"/>
-<wire x1="17.465278125" y1="-0.540996875" x2="18.38988125" y2="0.977" width="0.4064" layer="16"/>
+<wire x1="17.365278125" y1="-0.740996875" x2="16.75778125" y2="-1.34849375" width="0.4064" layer="16"/>
+<wire x1="16.75778125" y1="-1.34849375" x2="16.232121875" y2="-2.387" width="0.4064" layer="16"/>
+<wire x1="18.38988125" y1="0.941178125" x2="17.365278125" y2="-0.740996875" width="0.4064" layer="16"/>
+<wire x1="18.38988125" y1="0.941178125" x2="18.38988125" y2="0.977" width="0.4064" layer="16"/>
 <wire x1="2.725290625" y1="-1.4181125" x2="2.343403125" y2="-1.8" width="0.1524" layer="16"/>
 <wire x1="2.343403125" y1="-1.8" x2="0.2" y2="-1.8" width="0.1524" layer="16"/>
 <via x="0.2" y="-1.8" extent="1-16" drill="0.3302"/>
@@ -1412,21 +1502,44 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="16.3" y1="1" x2="16.3" y2="0.6" width="0.1524" layer="1"/>
 <via x="16.3" y="0.6" extent="1-16" drill="0.3302"/>
 <wire x1="16.3" y1="0.6" x2="17.4" y2="-0.1" width="0.1524" layer="16"/>
-<wire x1="17.4" y1="-0.1" x2="17.440996875" y2="-0.540996875" width="0.1524" layer="16"/>
-<wire x1="17.440996875" y1="-0.540996875" x2="17.465278125" y2="-0.540996875" width="0.1524" layer="16"/>
+<wire x1="17.4" y1="-0.1" x2="17.457975" y2="-0.72361875" width="0.1524" layer="16"/>
+<wire x1="17.457975" y1="-0.72361875" x2="17.365278125" y2="-0.740996875" width="0.1524" layer="16"/>
 </signal>
 <signal name="BATTERY_SENSE">
 <contactref element="R6" pad="2"/>
 <contactref element="U20" pad="5"/>
-<wire x1="15.15988125" y1="-1.337" x2="13.044040625" y2="0.2092875" width="0.1524" layer="16"/>
+<wire x1="14.75988125" y1="-1.537" x2="14.677221875" y2="-1.42389375" width="0.1524" layer="16"/>
+<wire x1="14.677221875" y1="-1.42389375" x2="13.044040625" y2="0.2092875" width="0.1524" layer="16"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 <compatibility>
 <note version="6.3" minversion="6.2.2" severity="warning">
 Since Version 6.2.2 text objects can contain more than one line,
 which will not be processed correctly with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports Fusion synchronisation.
+This feature will not be available in this version and saving
+the document will break the link to the Fusion PCB feature.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
 </note>
 </compatibility>
 </eagle>
