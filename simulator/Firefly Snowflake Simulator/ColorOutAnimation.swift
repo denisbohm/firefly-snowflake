@@ -11,7 +11,7 @@ import Cocoa
 class ColorOutAnimation: Animation {
 
     var name = "Color Out"
-    let intensity = 0.5
+    let intensity = 1.0
     let steps = 40
     let rampSteps = 20
     var index = 0
@@ -98,7 +98,7 @@ class ColorOutAnimation: Animation {
                 print("const uint8_t fd_breathe_instructions[] = {")
                 for i in 0 ..< colors.count {
                     print("    fd_snowflake_operation_illuminate, fd_snowflake_operand(78), fd_snowflake_operand(78 * 13 * \(i)),")
-                    print("    fd_snowflake_operation_sleep, fd_snowflake_operand(298),")
+                    print("    fd_snowflake_operation_sleep, fd_snowflake_operand(5),")
                 }
                 print("    fd_snowflake_operation_restart,")
                 print("};")

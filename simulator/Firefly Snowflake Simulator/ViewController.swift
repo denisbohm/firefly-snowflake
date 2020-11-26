@@ -66,7 +66,7 @@ class ViewController: NSViewController {
         }
     }
 
-    func animate() {
+    @objc func animate() {
         animation?.step()
         updateLEDS()
     }
