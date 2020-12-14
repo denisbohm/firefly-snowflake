@@ -12,8 +12,8 @@ protocol Animation {
 
     var name: String { get }
     
-    func initialize()
-
+    var firmware: String { get }
+    
     func step()
 
     func pixel(index: Int) -> Pixel

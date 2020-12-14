@@ -10,16 +10,20 @@ import Cocoa
 
 class Pixel {
 
-    var red: Double = 0
-    var green: Double = 0
-    var blue: Double = 0
-
-    var x: Double
-    var y: Double
-
-    init(x: Double, y: Double) {
-        self.x = x
-        self.y = y
+    var red: Double
+    var green: Double
+    var blue: Double
+    
+    init() {
+        self.red = 0
+        self.green = 0
+        self.blue = 0
+    }
+    
+    init(red: Double, green: Double, blue: Double) {
+        self.red = red
+        self.green = green
+        self.blue = blue
     }
 
 }

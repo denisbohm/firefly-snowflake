@@ -31,12 +31,14 @@ class ViewController: NSViewController {
             NSLog("cannot find subview")
         }
 
+        animations.append(CircleAnimation())
         animations.append(ColorOutAnimation())
 
         for animation in animations {
             patternPopUpButton?.addItem(withTitle: animation.name)
         }
         animation = animations[0]
+        print(animation?.firmware ?? "")
         updateLEDS()
 
         timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
@@ -72,7 +74,7 @@ class ViewController: NSViewController {
     }
 
     @IBAction func patternChanged(_: AnyObject) {
-
+        animation = animations[patternPopUpButton?.indexOfSelectedItem ?? 0]
     }
 
     override var representedObject: Any? {

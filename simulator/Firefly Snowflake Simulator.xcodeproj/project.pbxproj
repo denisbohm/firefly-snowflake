@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929C2B55257EF96F003553A6 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C2B54257EF96F003553A6 /* Assembly.swift */; };
+		929C2B5A257EFA7C003553A6 /* AnimationBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C2B59257EFA7C003553A6 /* AnimationBase.swift */; };
+		929C2B5F258030C1003553A6 /* CircleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929C2B5E258030C1003553A6 /* CircleAnimation.swift */; };
 		92C642C31DFA51B600773A70 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C21DFA51B600773A70 /* Animation.swift */; };
 		92C642C51DFA52A400773A70 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C41DFA52A400773A70 /* Pixel.swift */; };
 		92C642C71DFA536A00773A70 /* ColorOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		929C2B54257EF96F003553A6 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		929C2B59257EFA7C003553A6 /* AnimationBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationBase.swift; sourceTree = "<group>"; };
+		929C2B5E258030C1003553A6 /* CircleAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAnimation.swift; sourceTree = "<group>"; };
 		92C642C21DFA51B600773A70 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		92C642C41DFA52A400773A70 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorOutAnimation.swift; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 				92C642C21DFA51B600773A70 /* Animation.swift */,
 				92C642C41DFA52A400773A70 /* Pixel.swift */,
 				92C642C61DFA536A00773A70 /* ColorOutAnimation.swift */,
+				929C2B54257EF96F003553A6 /* Assembly.swift */,
+				929C2B59257EFA7C003553A6 /* AnimationBase.swift */,
+				929C2B5E258030C1003553A6 /* CircleAnimation.swift */,
 			);
 			path = "Firefly Snowflake Simulator";
 			sourceTree = "<group>";
@@ -271,8 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92DF1C021DFA38C800F5ED62 /* RGBLEDView.swift in Sources */,
+				929C2B5A257EFA7C003553A6 /* AnimationBase.swift in Sources */,
+				929C2B5F258030C1003553A6 /* CircleAnimation.swift in Sources */,
 				92DF1BD71DFA372000F5ED62 /* ViewController.swift in Sources */,
 				92C642C31DFA51B600773A70 /* Animation.swift in Sources */,
+				929C2B55257EF96F003553A6 /* Assembly.swift in Sources */,
 				92C642C71DFA536A00773A70 /* ColorOutAnimation.swift in Sources */,
 				92C642C51DFA52A400773A70 /* Pixel.swift in Sources */,
 				92DF1BD51DFA372000F5ED62 /* AppDelegate.swift in Sources */,
